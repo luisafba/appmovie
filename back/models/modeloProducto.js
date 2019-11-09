@@ -1,7 +1,7 @@
 "use strict";
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-var Categoria = mongoose.model('Categorias');
+//var Categoria = mongoose.model('Categorias');
 const productosSchema = new Schema({
   // id: {
   //   type: String
@@ -34,14 +34,14 @@ const productosSchema = new Schema({
   protagonista: {
     type: String
   },
-  archivo: {
-    type: String
-  },
   categoria: { 
-      type: Schema.ObjectId, ref: "Categoria" 
+      type: Schema.ObjectId, ref: "Categorias" 
   },
   favorito: {
     type: Boolean
+  },
+  archivo: {
+    type: String
   }
 });
 

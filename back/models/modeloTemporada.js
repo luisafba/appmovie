@@ -1,7 +1,7 @@
 "use strict";
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-var Producto = mongoose.model('Productos');
+//var Producto = mongoose.model('Productos');
 const temporadasSchema = new Schema({
   // id: {
   //   type: String
@@ -11,7 +11,7 @@ const temporadasSchema = new Schema({
     type: String
   }, 
   producto: { 
-      type: Schema.ObjectId, ref: "Producto" 
+      type: Schema.ObjectId, ref: "Productos" 
   } 
 });
 

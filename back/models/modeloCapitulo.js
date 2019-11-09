@@ -1,8 +1,8 @@
 "use strict";
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-var Temporada = mongoose.model('Temporadas');
-const capituloSchema = new Schema({
+//var Temporada = mongoose.model('Temporadas');
+const capitulosSchema = new Schema({
   // id: {
   //   type: String
   // },
@@ -11,7 +11,7 @@ const capituloSchema = new Schema({
     type: String
   },
   temporada: { 
-    type: Schema.ObjectId, ref: "Temporada" 
+    type: Schema.ObjectId, ref: "Temporadas" 
   }
   
 });
