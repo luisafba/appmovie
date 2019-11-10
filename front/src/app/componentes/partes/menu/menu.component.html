@@ -1,0 +1,47 @@
+<nav class="menu">
+  <input type="checkbox" id="mostrarMenu" />
+  <label routerLink="/menu" for="mostrarMenu">Menu</label>
+  <ul>
+    <li class="nickname">NICKNAME</li>
+    <li>
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Buscar"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+        />
+      </div>
+    </li>
+    <li><a href="menu">Peliculas</a></li>
+    <li><a href="menu">Series</a></li>
+    <li><a href="menu">Animes</a></li>
+    <li>
+      <div class="dropdown dropright">
+        <a
+          class="dropdown-toggle"
+          href="#"
+          role="button"
+          id="dropdownMenuLink"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Generos
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="menu">Romance</a>
+          <a class="dropdown-item" href="menu">Drama</a>
+          <a class="dropdown-item" href="menu">Comedia</a>
+        </div>
+      </div>
+    </li>
+    <li><a href="#">Mis Favoritos</a></li>
+    <li><a href="#" class="btn-administrar">Administrar</a></li>
+    <br />
+    <br />
+    <li class="text-center"><a href="#">Cerrar Sesión</a></li>
+  </ul>
+</nav>

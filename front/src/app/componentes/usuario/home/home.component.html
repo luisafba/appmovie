@@ -1,0 +1,412 @@
+<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Archivo+Black|Caveat&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Archivo+Black|Istok+Web&display=swap" rel="stylesheet">
+
+​
+
+<!-- CARRUCEL PELICULAS -->
+
+<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+
+<!-- ANIMATE -->
+
+
+<div class="body">
+<div class="container-fluid">
+    <!-- MENÚ -->
+    <nav class="menu">
+        <input  type="checkbox" id="mostrarMenu">
+        <label routerLink ="/menu" for="mostrarMenu">Menu</label>
+        <ul>
+            <li class="nickname">NICKNAME</li>
+            <li>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Buscar" aria-label="Username"
+                        aria-describedby="basic-addon1">
+                </div>
+            </li>
+            <li><a href="#">Peliculas</a></li>
+            <li><a href="#">Series</a></li>
+            <li><a href="#">Animes</a></li>
+            <li>
+                <div class="dropdown dropright">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Generos
+                    </a>
+        
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="#">Romance</a>
+                        <a class="dropdown-item" href="#">Drama</a>
+                        <a class="dropdown-item" href="#">Comedia</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="#">Mis Favoritos</a></li>
+            <li><a href="#" class="btn-administrar">Administrar</a></li>
+            <br>
+            <br>
+            <li routerLink= "/inicio" class="text-center"><a href="#">Cerrar Sesión</a></li>
+        </ul>
+        </nav>
+    <!-- /MENÚ -->
+    <!-- CARRUCEL TRAILES DE ESTRENO -->
+    <div class="row">
+        <div class="bd-example">
+            <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-interval="20000">
+                        <video class="video-banner" autoplay muted loop>
+                            <source src="../../../../assets/videos/dora.mp4" type="video/mp4">
+                        </video>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Dora y la ciudad perdida</h3>
+                            <p>Dora se pone al frente de un equipo formado por su amigo peludo Botas; Diego, un
+                                misterioso habitante de la jungla; y un desorganizado grupo de adolescentes en una
+                                aventura en la que deberán salvar a los padres de Dora y resolver el misterio oculto
+                                tras una ciudad perdida de oro... <a href="">VER MÁS</a></p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-interval="20000">
+                        <video class="video-banner" autoplay muted loop>
+                            <source src="../../../../assets/videos/Frozen.mp4" type="video/mp4">
+                        </video>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Frozen II</h3>
+                            <p>La reina Elsa, su hermana Anna, Kristoff, Olaf y Sven se embarcan en un nuevo viaje al
+                                interior del bosque para descubrir la verdad sobre un antiguo misterio de su reino... <a
+                                    href="">VER MÁS</a></p>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-interval="20000">
+                        <video class="video-banner" autoplay muted loop>
+                            <source src="../../../../assets/videos/malefica2.mp4" type="video/mp4">
+                        </video>
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3>Maléfica: dueña del mal</h3>
+                            <p>cuenta la vida de Maléfica y Aurora, así como las alianzas que formarán para sobrevivir a
+                                las amenazas del mágico mundo en el que habitan...<a href="">VER MÁS</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /CARRUCEL TRAILES DE ESTRENO -->
+    <!-- CARRUSEL PELICULAS -->
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1 style="padding: 100px 0px 60px 0px;">CONTENIDO</h1>
+        </div>
+        <div class="col-md-12">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="https://www.anime-planet.com/images/anime/covers/hell-girl-two-mirrors-1352.jpg"
+                                class="card-img-top img-card-peli" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Hell Girl</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Acción</h6>
+                                <p>like: 10 | Dislike: 5</p>
+                                <a href="#" class="btn btn-primary btn-sm btn-block">Más Info</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="../../../../assets/imagenes/titanic.jpg" class="card-img-top img-card-peli" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Titanic</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Romance</h6>
+                                <p>like: 50 | Dislike: 15</p>
+                                <a href="#" class="btn btn-primary btn-sm btn-block">Más Info</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="https://vignette.wikia.nocookie.net/silenthill/images/8/8d/SHMOVIE.jpg/revision/latest/scale-to-width-down/250?cb=20110806041150&path-prefix=es"
+                                class="card-img-top img-card-peli" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Silent Hill</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Acción</h6>
+                                <p>like: 70 | Dislike: 9</p>
+                                <a href="#" class="btn btn-primary btn-sm btn-block">Más Info</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="https://www.anime-planet.com/images/anime/covers/hell-girl-two-mirrors-1352.jpg"
+                                class="card-img-top img-card-peli" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Hell Girl</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Acción</h6>
+                                <p>like: 10 | Dislike: 5</p>
+                                <a href="#" class="btn btn-primary btn-sm btn-block">Más Info</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="../../../../assets/imagenes/titanic.jpg" class="card-img-top img-card-peli" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Titanic</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Romance</h6>
+                                <p>like: 50 | Dislike: 15</p>
+                                <a href="#" class="btn btn-primary btn-sm btn-block">Más Info</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="https://vignette.wikia.nocookie.net/silenthill/images/8/8d/SHMOVIE.jpg/revision/latest/scale-to-width-down/250?cb=20110806041150&path-prefix=es"
+                                class="card-img-top img-card-peli" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Silent Hill</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Acción</h6>
+                                <p>like: 70 | Dislike: 9</p>
+                                <a href="#" class="btn btn-primary btn-sm btn-block">Más Info</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="https://www.anime-planet.com/images/anime/covers/hell-girl-two-mirrors-1352.jpg"
+                                class="card-img-top img-card-peli" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Hell Girl</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Acción</h6>
+                                <p>like: 10 | Dislike: 5</p>
+                                <a href="#" class="btn btn-primary btn-sm btn-block">Más Info</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="../../../../assets/imagenes/titanic.jpg" class="card-img-top img-card-peli" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Titanic</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Romance</h6>
+                                <p>like: 50 | Dislike: 15</p>
+                                <a href="#" class="btn btn-primary btn-sm btn-block">Más Info</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="https://vignette.wikia.nocookie.net/silenthill/images/8/8d/SHMOVIE.jpg/revision/latest/scale-to-width-down/250?cb=20110806041150&path-prefix=es"
+                                class="card-img-top img-card-peli" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Silent Hill</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Acción</h6>
+                                <p>like: 70 | Dislike: 9</p>
+                                <a href="#" class="btn btn-primary btn-sm btn-block">Más Info</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="https://www.anime-planet.com/images/anime/covers/hell-girl-two-mirrors-1352.jpg"
+                                class="card-img-top img-card-peli" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Hell Girl</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Acción</h6>
+                                <p>like: 10 | Dislike: 5</p>
+                                <a href="#" class="btn btn-primary btn-sm btn-block">Más Info</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="https://www.anime-planet.com/images/anime/covers/hell-girl-two-mirrors-1352.jpg"
+                                class="card-img-top img-card-peli" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Hell Girl</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Acción</h6>
+                                <p>like: 10 | Dislike: 5</p>
+                                <a href="#" class="btn btn-primary btn-sm btn-block">Más Info</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="../../../../assets/imagenes/titanic.jpg" class="card-img-top img-card-peli" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Titanic</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Romance</h6>
+                                <p>like: 50 | Dislike: 15</p>
+                                <a href="#" class="btn btn-primary btn-sm btn-block">Más Info</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="https://vignette.wikia.nocookie.net/silenthill/images/8/8d/SHMOVIE.jpg/revision/latest/scale-to-width-down/250?cb=20110806041150&path-prefix=es"
+                                class="card-img-top img-card-peli" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Silent Hill</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Acción</h6>
+                                <p>like: 70 | Dislike: 9</p>
+                                <a href="#" class="btn btn-primary btn-sm btn-block">Más Info</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="https://www.anime-planet.com/images/anime/covers/hell-girl-two-mirrors-1352.jpg"
+                                class="card-img-top img-card-peli" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Hell Girl</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Acción</h6>
+                                <p>like: 10 | Dislike: 5</p>
+                                <a href="#" class="btn btn-primary btn-sm btn-block">Más Info</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="../../../../assets/imagenes/titanic.jpg" class="card-img-top img-card-peli" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Titanic</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Romance</h6>
+                                <p>like: 50 | Dislike: 15</p>
+                                <a href="#" class="btn btn-primary btn-sm btn-block">Más Info</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="https://vignette.wikia.nocookie.net/silenthill/images/8/8d/SHMOVIE.jpg/revision/latest/scale-to-width-down/250?cb=20110806041150&path-prefix=es"
+                                class="card-img-top img-card-peli" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Silent Hill</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Acción</h6>
+                                <p>like: 70 | Dislike: 9</p>
+                                <a href="#" class="btn btn-primary btn-sm btn-block">Más Info</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="https://www.anime-planet.com/images/anime/covers/hell-girl-two-mirrors-1352.jpg"
+                                class="card-img-top img-card-peli" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Hell Girl</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Acción</h6>
+                                <p>like: 10 | Dislike: 5</p>
+                                <a href="#" class="btn btn-primary btn-sm btn-block">Más Info</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="../../../../assets/imagenes/titanic.jpg" class="card-img-top img-card-peli" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Titanic</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Romance</h6>
+                                <p>like: 50 | Dislike: 15</p>
+                                <a href="#" class="btn btn-primary btn-sm btn-block">Más Info</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="https://vignette.wikia.nocookie.net/silenthill/images/8/8d/SHMOVIE.jpg/revision/latest/scale-to-width-down/250?cb=20110806041150&path-prefix=es"
+                                class="card-img-top img-card-peli" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Silent Hill</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Acción</h6>
+                                <p>like: 70 | Dislike: 9</p>
+                                <a href="#" class="btn btn-primary btn-sm btn-block">Más Info</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card text-center" style="width: 18rem;">
+                            <img src="https://www.anime-planet.com/images/anime/covers/hell-girl-two-mirrors-1352.jpg"
+                                class="card-img-top img-card-peli" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Hell Girl</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Acción</h6>
+                                <p>like: 10 | Dislike: 5</p>
+                                <a href="#" class="btn btn-primary btn-sm btn-block">Más Info</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </div>
+    <!-- /CARRUSEL PELICULAS -->
+    <!-- FOOTER -->
+    <footer>
+        <div class="row align-items-center animated fadeInUp">
+            <div class="col-md-6 col-sm-12 text-center">
+                <form action="">
+                    <div class="form-group">
+                        <input type="text" class="input-footer" placeholder="Correo electrónico">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="input-footer" placeholder="Mensaje">
+                    </div>
+                    <button class="btn btn-footer">Enviar</button>
+                </form>
+            </div>
+            <div class="col-md-6 col-sm-12 text-center">
+                <p class="p-footer">Creado y diseñado por <a href="/">Agile Soft</a></p>
+            </div>
+        </div>
+    </footer>
+    <!-- /FOOTER -->
+</div>
+
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script> -->
+<!-- CARRUCEL PELICULAS -->
+<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+        },
+    });
+</script>
+<!-- /CARRUCEL PELICULAS -->
+</div>

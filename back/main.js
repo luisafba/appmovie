@@ -9,8 +9,8 @@ const categoriasRoutes = require("./routes/rutaCategoria");
 const productosRoutes = require("./routes/rutaProducto");
 const temporadasRoutes = require("./routes/rutaTemporada");
 
-//const usuariosRoutes = require("./routes/rutaUsuario");
-//const loginRoutes = require("./routes/rutaLogin");
+const usuariosRoutes = require("./routes/rutaUsuario");
+const loginRoutes = require("./routes/rutaLogin");
 
 const colors = require("colors");
 const app = express();
@@ -51,10 +51,10 @@ app.use(cors({ origen: "http://localhost:4200" }));
   res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS');
   res.header('Allow', 'GET, PUT, POST, DELETE, OPTIONS');
   next();
-})*/ 
+})*/
 
 
-const apiGroupRoutes = [capitulosRoutes, categoriasRoutes, productosRoutes, temporadasRoutes];
+const apiGroupRoutes = [capitulosRoutes, categoriasRoutes, productosRoutes, temporadasRoutes, usuariosRoutes, loginRoutes];
 
 apiGroupRoutes.forEach(routes => app.use("/api", routes));
 
