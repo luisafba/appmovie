@@ -25,10 +25,10 @@ const storage = multer.diskStorage({
 var upload = multer({
   storage: storage,
   limits: {
-    fileSize: 1024 * 1024 * 5
+    fileSize: 1024 * 1024 * 50
   },
   fileFilter: (req, file, cb) => {
-    if (file.mimetype == "video/mpeg" || file.mimetype.indexOf("video/") != -1) {
+    if (file.mimetype == "video/mp4" || file.mimetype.indexOf("video/") != -1) {/*incluir video/webm, video/ogg*/
       cb(null, true);
     } else {
       cb(null, false);
@@ -125,7 +125,15 @@ router.get("/productos/:id", (req, res, next) => {
 
 // GET
 router.get("/productos/", (req, res, next) => {
-  Productos.find((err, productos) => {
+  console.log("Consultando productos... ");
+  let filter = {}
+  if(req.query.nombre){
+    filter.nombre = {'$regex': req.query.nombre};
+  }
+  if(req.query.genero){
+    filter.genero = req.query.genero;
+  }
+  Productos.find(filter, function (err, productos){
     res.status(200).send({ productos });
   });
 });

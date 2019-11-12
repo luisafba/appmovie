@@ -11,7 +11,8 @@ const productosSchema = new Schema({
     type: String
   },
   genero: {
-    type: String
+    type: String,
+    enum: ["Acción", "Anime", "Aventura", "Ciencia Ficción", "Comedia", "Drama", "Musical","Suspenso", "Terror"]
   },
   anio: {
     type: Number
@@ -35,10 +36,8 @@ const productosSchema = new Schema({
     type: String
   },
   categoria: { 
-      type: Schema.ObjectId, ref: "Categorias" 
-  },
-  favorito: {
-    type: Boolean
+      type: String,
+      enum: ["Película", "Serie"] 
   },
   archivo: {
     type: String

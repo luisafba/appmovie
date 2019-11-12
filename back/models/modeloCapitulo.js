@@ -12,7 +12,10 @@ const capitulosSchema = new Schema({
   },
   temporada: { 
     type: Schema.ObjectId, ref: "Temporadas" 
-  }
+  },
+  archivo: {
+    type: String
+  },
   
 });
 
