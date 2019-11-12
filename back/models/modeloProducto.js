@@ -27,7 +27,7 @@ const productosSchema = new Schema({
   imagen:{
     type: String
   },
-  Clasificacion: {
+  clasificacion: {
     type: Number
   },
   director: {
