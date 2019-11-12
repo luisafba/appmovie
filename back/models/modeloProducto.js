@@ -23,9 +23,11 @@ const productosSchema = new Schema({
   
   sinopsis: {
     type: String
+  },  
+  imagen:{
+    type: String
   },
-  
-  edad: {
+  Clasificacion: {
     type: Number
   },
   director: {
@@ -37,12 +39,13 @@ const productosSchema = new Schema({
   categoria: { 
       type: Schema.ObjectId, ref: "Categorias" 
   },
-  favorito: {
-    type: Boolean
-  },
   archivo: {
     type: String
-  }
+  }, 
+  comentarios: [{
+    type: {Schema.ObjectId, ref: "Usuario" },
+    comentario: String
+  }]
 });
 
 //const canciones = mongoose.model("canciones", cancionesSchema);
