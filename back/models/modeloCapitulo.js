@@ -12,6 +12,9 @@ const capitulosSchema = new Schema({
   },
   temporada: { 
     type: Schema.ObjectId, ref: "Temporadas" 
+  },  
+  producto: { 
+    type: Schema.ObjectId, ref: "Productos" 
   }
   
 });
