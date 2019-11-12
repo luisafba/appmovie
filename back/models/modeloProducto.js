@@ -30,6 +30,12 @@ const productosSchema = new Schema({
   clasificacion: {
     type: Number
   },
+  like: {
+    type: Number
+  },
+  dislike: {
+    type: Number
+  },
   director: {
     type: String
   },
