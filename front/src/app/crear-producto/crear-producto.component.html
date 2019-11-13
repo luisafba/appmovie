@@ -1,0 +1,60 @@
+<header></header>
+<!-- <link href="https://fonts.googleapis.com/css?family=Great+Vibes|ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+ -->
+<div > <!-- class="contenedorCrear" -->
+    <div ><!-- class="tituloListaCanciones" -->
+        <!-- <img src="../../assets/images/flecha-izq.png" alt="">
+         -->
+         <h2>Crear Nuevo Producto</h2>
+        <!-- <img src="../../assets/images/guardar.png" width="30px" height="30px" alt=""> -->
+    </div>
+
+    <form [formGroup]="productoForm" (ngSubmit)="enviar()">
+        <label for="nombre">Nombre:</label>
+        <input formControlName="nombre" type="text" />
+        <label for="genero">Género:</label>
+        <!-- "Acción", "Anime", "Aventura", "Ciencia Ficción", "Comedia", "Drama", "Musical","Suspenso", "Terror" -->
+        <select name="genero" id="genero" formControlName="genero">
+            <option value="Acción">Salsa</option>
+            <option value="Anime">Rock</option>
+            <option value="Aventura">Pop</option>
+            <option value="Ciencia Ficción">Vallenato</option>
+            <option value="Comedia">Electronica</option>
+            <option value="Drama">Gospel</option>
+            <option value="Musical">Metal</option>
+            <option value="Suspenso">Ranchera</option>
+            <option value="Terror">Rap</option>
+        </select>
+        <label for="anio">Año:</label>
+        <input formControlName="anio" type="Number" name="anio" id="anio" />
+        <label for="duracion">Duración:</label>
+        <input formControlName="duracion" type="Number" name="duracion" id="duracion" />
+        <label for="sinopsis">Sinopsis: </label>
+        <input formControlName="sinopsis" type="text" name="sinopsis" id="sinopsis" />
+        <label for="edad">Edad: </label>
+        <input formControlName="edad" type="text" name="edad" id="edad" />
+        <label for="director">Director: </label>
+        <input formControlName="director" type="text" name="director" id="director" />
+        <label for="protagonista">Protagonista: </label>
+        <input formControlName="protagonista" type="text" name="protagonista" id="protagonista" />
+        <label for="categoria">Categoría:</label>
+        <!-- "Acción", "Anime", "Aventura", "Ciencia Ficción", "Comedia", "Drama", "Musical","Suspenso", "Terror" -->
+        <select name="categoria" id="categoria" formControlName="ctegoria">
+            <option value="Accion">Acción</option>
+            <option value="Anime">Anime</option>
+            <option value="Aventura">Aventura</option>
+            <option value="Ciencia_Ficcion">Ciencia Ficción</option>
+            <option value="Comedia">Comedia</option>
+            <option value="Drama">Drama</option>
+            <option value="Musical">Musical</option>
+            <option value="Suspenso">Suspenso</option>
+            <option value="Terror">Terror</option>
+        </select>
+        <label for="archivo">Archivo: </label>
+        <input type="file" accept=".mp4,video/*" (change)="onSelectFile($event)" name="archivo" id="archivo" #fileInput>
+        <button [disabled]="!productoForm.valid" type="submit">Registrar</button>
+    </form>
+</div>
+<!-- </div> -->
+
+
