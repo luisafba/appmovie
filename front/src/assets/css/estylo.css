@@ -1,0 +1,658 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    background: #262626;
+    font-family: 'ZCOOL XiaoWei', serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: rgb(255, 204, 94);
+    font-family: 'Lobster', cursive;
+}
+h1 {
+    font-size: 4rem;
+}
+h2 {
+    font-size: 3rem;
+}
+p {
+    /* font-family: 'Istok Web', sans-serif; */
+    text-align: justify;
+    color: #f6f5f5;
+}
+/* LOGIN */
+.fondo-login {
+    height: 100vh;
+    /* background: url('https://de10.com.mx/sites/default/files/styles/detalle_nota/public/2018/05/29/malefica_2_pelicula.jpg?itok=cB5S1vU8'); */
+    background: url('../img/maleficaLog.jpg');
+    background-attachment: fixed;
+    /* filter: blur(2px); */
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+}
+.fondo-login .row {
+    height: 100vh;
+}
+.btn-footer:hover {
+    color:rgb(73, 55, 17); 
+    background: url("../img/btnDorado.jpg");
+    background-size: 100% 100vh;
+    font-weight: bold;
+    border: 1px solid transparent;
+}
+.form-loguin {
+    background: rgba(0,0,0,0.9);
+    padding: 40px 0px;
+    border-radius: 5px;
+}
+.form-loguin a {
+    margin-top: 20px;
+    color: rgb(255, 204, 94);
+    transition: all 0.5s;
+}
+.form-loguin a:hover {
+    color: rgb(167, 120, 67);
+}
+/* /LOGIN */
+/* REGISTRO  */
+.fondo-registro {
+    height: 100vh;
+    /* background: url('https://wallpaperstock.net/wallpapers/thumbs1/2075.jpg'); */
+    background: url('../img/SilentHillRegistro.jpg');
+    background-attachment: fixed;
+    /* filter: blur(2px); */
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+}
+.fondo-registro .row {
+    height: 100vh;
+}
+/* /REGISTRO  */
+/* BANNER INDEX */
+.banner {
+    height: 100vh;
+    /* background: #000; */
+    background: url('../img/fondo.jpg');
+    background-size: 100%;
+    color: #fff;
+}
+.bannerLogo {
+    width: 380px;
+    margin-bottom: 30px;
+}
+.btn-index {
+    color:rgb(255, 204, 94);
+    margin: 10px 20px;
+    font-weight: bold;
+    background: transparent;
+    border: 1px solid rgb(255, 204, 94);
+    border-radius: 5px;
+    transition: all 1s;
+}
+.btn-index:hover {
+    color:rgb(73, 55, 17); 
+    background: url("../img/btnDorado.jpg");
+    background-size: 100% 100vh;
+    font-weight: bold;
+    border: 1px solid transparent;
+}
+/* /BANNER INDEX */
+/* NOSOTROS INDEX */
+.nosotros-sec {
+    padding: 100px 100px;
+}
+.nosotros-sec h1 {
+    padding: 0px 90px;
+    padding-bottom: 50px;
+}
+/* /NOSOTROS INDEX */
+/* FOOTER */
+footer {
+    background: rgba(0,0,0,0.5);
+    padding: 50px;
+    border-radius: 5px;
+}
+.input-footer {
+    color: white;
+    width: 350px;
+    padding: 10px 5px;
+    margin-top: 10px;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid rgb(255, 204, 94);
+}
+.btn-footer {
+    color:rgb(255, 204, 94);
+    font-weight: bold;
+    background: transparent;
+    border: 1px solid rgb(255, 204, 94);
+    border-radius: 5px;
+    transition: all 1s;
+}
+.p-footer {
+    color: rgba(255,255,255,0.5);
+}
+.p-footer a {
+    color: rgb(255, 204, 94);
+    transition: all 0.5s;
+}
+.p-footer a:hover {
+    color: rgb(167, 120, 67);
+}
+/* /FOOTER */
+/* BANNER ESTRENOS */
+.bd-example {
+    background: #000;
+}
+.bd-example {
+    width: 100%;
+}
+.video-banner {
+    width: 100vw;
+    height: 90vh;
+}
+.carousel-caption {
+    text-align: justify;
+    width: 300px;
+    right: 15%;
+    bottom: 15%;
+    left: unset;
+}
+.carousel-indicators li {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+}
+.carousel-caption p a {
+    color: rgb(255, 204, 94);
+}
+.carousel-caption h3 {
+    text-align: center;
+    color: rgb(255, 204, 94);
+}
+.carousel-caption p a:hover {
+    color: rgb(255, 204, 94);
+}
+/* /BANNER ESTRENOS */
+/* CARRUSEL PELICULAS */
+.carousel-item .card {
+    margin-bottom: 50px;
+}
+.swiper-container {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 400px;
+}
+.swiper-pagination-bullet-active {
+    background: rgb(255, 204, 94);
+}
+.img-card-peli {
+    width: 100%;
+    height: 250px;
+}
+.card-body {
+    padding: 5px;
+}
+.card {
+    margin: auto;
+    background-color: transparent;
+    background-clip: border-box;
+    border: transparent;
+    border-radius: .25rem;
+}
+.card-title {
+    color: #f6f5f5;
+}
+.card-body p {
+    color: #e8e8e7;
+    text-align: center;
+}
+.card-body a {
+    color:rgb(255, 204, 94);
+    font-weight: bold;
+    background: transparent;
+    border: 1px solid rgb(255, 204, 94);
+    border-radius: 5px;
+    transition: all 1s;
+}
+.card-body a:hover {
+    color:rgb(73, 55, 17); 
+    background: url("../img/btnDorado.jpg");
+    background-size: 100%;
+    font-weight: bold;
+    border: transparent;
+}
+/* /CARRUSEL PELICULAS */
+
+/* MENU */
+.imagen-perfil {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    background: url('../img/btnDorado.jpg');
+    background-size: 100% 100vh;
+    border-radius: 50%;
+}
+.imagen-perfil img{
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    border-radius: 50%;
+}
+.nickname {
+    font-family: 'Archivo Black', sans-serif;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.menu ul {
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: -50%; /*se le da el left con el mismo tamaño del ancho*/
+    background: rgba(0,0,0,0.9);
+    width: 20%;
+    height: 100vh;
+    padding-top: 5em;
+    z-index: 100; /*Indica la posicion en el eje Z (tridimencional) de éste elemento (para que el botón salga en frente del menú, en éste caso)*/
+    transition: all 0.5s;
+}
+.menu ul li a{
+    color: rgb(255, 204, 94);
+    text-decoration: none;
+    display: block;
+    line-height: 2.5;
+    padding: 0 1em;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+a:not([href]):not([tabindex]) {
+    color: rgb(255, 204, 94);
+    text-decoration: none;
+}
+a:not([href]):not([tabindex]):hover {
+    color: rgb(255, 204, 94);
+    text-decoration: none;
+}
+.btn-administrar {
+    background: rgba(3, 3, 3, 0.2);
+}
+.menu ul li a:hover{
+    background: rgba(255,255,255,0.2);
+}
+#mostrarMenu {
+    display: none;
+}
+#mostrarMenu + label {
+    position: fixed;
+    margin: 10px;
+    top:0;
+    left: 0;
+    line-height: 2;
+    /* background: #222; */
+    background: url("../img/btnDorado.jpg");
+    background-size: 100%;
+    color: #f6f5f5;
+    font-weight: bold;
+    /* color:rgb(73, 55, 17);  */
+    padding: 0 1em;
+    cursor: pointer;
+    z-index: 150;
+    transition: color 0.5s;
+}
+#mostrarMenu + label:hover {
+    color:rgb(73, 55, 17);
+}
+#mostrarMenu:checked ~ ul {
+    left: 0px;
+}
+.dropdown-menu {
+    background: rgba(0,0,0,0.9);
+    padding: 0;
+}
+.dropdown-menu .dropdown-item {
+    color: rgb(255, 189, 46);
+}
+.dropdown-menu .dropdown-item:hover {
+    background: rgba(124, 18, 18, 0.5);
+}
+/* /MENU */
+/* PELICULAS */
+.peliculas-row {
+    padding: 70px;
+}
+.favorito {
+    width: 40px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.favorito:hover {
+    filter: brightness(250%);
+}
+.btn-like {
+    /* color:rgb(73, 55, 17); 
+    background: url("../img/Like.png");
+    background-size: 100%;
+    font-weight: bold; */
+    width: 40px;
+    margin: 0px 7px;
+    cursor: pointer;
+    
+}
+.btn-dislike {
+    /* color:#fff; 
+    background: url("https://media.istockphoto.com/vectors/red-metal-abstract-technology-background-vector-id1067354644?k=6&m=1067354644&s=170667a&w=0&h=F8_v5jTZV4thnjAqVMKxKwzNmzWgd8TUNu3igbdEQr8=");
+    background-size: 100%;
+    font-weight: bold; */
+    width: 40px;
+    margin-right: 7px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.badge-light {
+    color:#212529;
+    background-color: rgba(255,255,255,0.4);
+}
+.small-pelis {
+    color: rgba(255,255,255,0.3);
+}
+.peliculas-row h1, h2 {
+    margin-bottom: 50px;
+}
+.peliculas-row h2 {
+    margin-top: 90px;
+}
+.list-group-item {
+    color: #f6f5f5;
+    position: relative;
+    display: block;
+    padding: .75rem 1.25rem;
+    margin-bottom: -1px;
+    background: transparent;
+    /* border: 1px solid rgb(255, 189, 46); */
+    border-right: 1px solid rgb(255, 189, 46);
+    /* border-bottom: 1px solid rgb(255, 189, 46); */
+}
+.list-group-item a:hover {
+    color: rgba(255,255,255,0.3);
+}
+.list-group-item-action:hover, .list-group-item-action:focus {
+    z-index: 1;
+    color:#f6f5f5;
+    text-decoration: none;
+    background: rgba(255,255,255,0.2);
+}
+.list-group-item.active {
+    z-index: 2;
+    color:#f6f5f5;
+    background: url("../img/btnDorado.jpg");
+    background-size: 100%;
+    border-color: transparent;
+}
+.list-group-flush li {
+    border: 1px solid rgb(255, 189, 46);
+}
+.list-group-flush li:hover {
+    background: rgba(255,255,255,0.2);
+}
+.form-comentario textarea {
+    color:#f6f5f5;
+    /* width: 350px; */
+    padding: 10px 5px;
+    margin-bottom: 10px;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid rgb(255, 204, 94);
+}
+.form-comentario textarea:focus {
+    color:#f6f5f5;
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    border-bottom: 1px solid rgb(255, 204, 94);
+}
+.media img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border-bottom: 3px solid rgb(255, 204, 94);
+}
+/* /PELICULAS */
+/* ADMIN LISTA */
+.titulo-admin {
+    margin: 40px 0px;
+    text-align: center;
+}
+.table {
+    color:#f6f5f5;
+}
+.table-hover tbody tr:hover {
+    color:#f6f5f5;
+    background: rgba(255,255,255,0.2);
+}
+thead {
+    background: rgba(0, 0, 0, 0.5);
+}
+th img {
+    width: 25px;
+}
+td a {
+    color:rgb(255, 204, 94);
+    transition: all 0.5s;
+}
+td a:hover {
+    color: rgb(167, 120, 67);
+}
+.th-like {
+    width: 60px;
+    margin: 100px;
+}
+.table-bordered {
+  border: 1px solid rgba(255,255,255,0.3);
+}
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid rgba(255,255,255,0.3);
+}
+.page-item.active .page-link {
+    color:#f6f5f5;
+    font-weight: bold;
+    background: url('../img/btnDorado.jpg');
+    background-size: 200% 100vh;
+    background-repeat: no-repeat;
+    border-color: rgb(255, 204, 94);
+}
+.page-link {
+  color: rgb(255, 204, 94);
+  background-color: transparent;
+  border: 1px solid rgb(255, 204, 94);
+}
+
+.page-link:hover {
+  color: rgb(255, 204, 94);
+  background-color: rgba(255,255,255,0.3);
+  border-color: rgb(255, 204, 94);;
+}
+/* /ADMIN LISTA */
+/* ADMIN PELICULAS */
+.card-header h2 {
+    margin-top: 0;
+}
+.accordion td a {
+    color:rgb(255, 204, 94);
+    transition: all 0.5s;
+    border-radius: none;
+    border: none;
+    font-weight: normal;
+}
+.accordion a:hover {
+    color: rgb(167, 120, 67);
+    background: transparent;
+    background-size: 100%;
+    font-weight: normal;
+    border: none;
+}
+.card-admin {
+    background: url("../img/btnDorado.jpg");
+    background-size: 100% 100vh;
+}
+.card-admin h2 {
+    font-size: 0%;
+}
+.accordion > .card .card-header {
+    margin-bottom: 0;
+    border-bottom: 1px solid;
+}
+.btn-link {
+    font-weight: 400;
+    color: black;
+    text-decoration: none;
+}
+.btn-link:hover {
+    color:#f6f5f5;
+    text-decoration: none;
+}
+.btn-eliminar {
+    color:red;
+    font-weight: bold;
+    background: transparent;
+    border: 1px solid red;
+    border-radius: 5px;
+    transition: all 1s;
+    margin-bottom: 50px;
+}
+.btn-eliminar:hover {
+    color:#f6f5f5;
+    background: url("../img/btnRojo.jpg");
+    background-size: 100%;
+    font-weight: bold;
+    border: 1px solid transparent;
+}
+.btn-editar {
+    color:rgb(255, 204, 94);
+    font-weight: bold;
+    background: transparent;
+    border: 1px solid rgb(255, 204, 94);
+    border-radius: 5px;
+    transition: all 1s;
+    margin-bottom: 50px;
+}
+.btn-editar:hover {
+    color:rgb(73, 55, 17); 
+    background: url("../img/btnDorado.jpg");
+    background-size: 100%;
+    font-weight: bold;
+    border: 1px solid transparent;
+}
+/* /ADMIN PELICULAS */
+/* FORMULARIO NUEVO PRODUCTO */
+.nuevo-row {
+    padding: 10px 200px 70px 200px;
+}
+.form-nuevo {
+    color:#f6f5f5;
+}
+.form-nuevo input {
+    color:#f6f5f5;
+    /* width: 350px; */
+    padding: 10px 5px;
+    /* margin-top: 10px; */
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid rgb(255, 204, 94);
+}
+.form-nuevo textarea {
+    color:#f6f5f5;
+    /* width: 350px; */
+    padding: 10px 5px;
+    /* margin-top: 10px; */
+    border: none;
+    background: transparent;
+    border: 1px solid rgb(255, 204, 94);
+}
+.form-nuevo input:focus {
+    color:#f6f5f5;
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    border-bottom: 1px solid rgb(255, 204, 94);
+}
+.form-nuevo textarea:focus {
+    color:#f6f5f5;
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    border-bottom: 1px solid rgb(255, 204, 94);
+}
+.form-nuevo select {
+    color:#f6f5f5;
+    /* width: 350px; */
+    padding: 10px 5px;
+    /* margin-top: 10px; */
+    border: none;
+    background: transparent;
+    border: 1px solid rgb(255, 204, 94);
+}
+.form-nuevo select:focus {
+    color: black;
+    background: rgba(255,255,255,0.4);
+    border-color: transparent;
+    box-shadow: none;
+    border-top: 1px solid rgb(255, 204, 94);
+}
+/* /FORMULARIO NUEVO PRODUCTO */
+
+/* MEDIAQUERYS */
+@media only screen and (max-width: 540px) {
+    /* BANNER ESTRENOS */
+    .video-banner {
+        width: 100%;
+        height: 200px;
+    }
+    /* CARRUSEL PELICULAS */
+    .swiper-slide {
+        left: 1%;
+    }
+    /* MENU */
+    .menu ul {
+        left: -60%;
+        width: 60%;
+    }
+    /* NOSOTROS */
+    .nosotros-sec h1 {
+        padding: 0px 0px;
+    }
+    .nosotros-sec {
+        padding: 50px 20px;
+    }
+    /* FOOTER */
+    .input-footer {
+        width: 100%;
+    }
+    .btn-footer {
+        margin: 10px 0px 40px 0px;
+    }
+    /* PELICULA */
+    .peliculas-row {
+        padding: 10px;
+    }
+    /* ADMIN PELICULAS */
+    td p {
+        width: 300px;
+    }
+    .btn-editar {
+        margin-top: 40px;
+    }
+    /* ADMIN NUEVO PRODUCTO */
+    .nuevo-row {
+        padding: 10px;
+    }
+}
