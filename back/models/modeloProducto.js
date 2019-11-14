@@ -24,9 +24,17 @@ const productosSchema = new Schema({
   
   sinopsis: {
     type: String
+  },  
+  imagen:{
+    type: String
   },
-  
-  edad: {
+  clasificacion: {
+    type: Number
+  },
+  like: {
+    type: Number
+  },
+  dislike: {
     type: Number
   },
   director: {
@@ -40,7 +48,7 @@ const productosSchema = new Schema({
       enum: ["Película", "Serie"] 
   },
   archivo: {
-    type: String
+    type: String,
   }
 });
 

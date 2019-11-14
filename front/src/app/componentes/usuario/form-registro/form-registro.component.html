@@ -1,0 +1,90 @@
+<link
+  href="https://fonts.googleapis.com/css?family=Great+Vibes|ZCOOL+XiaoWei&display=swap"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Archivo+Black|Caveat&display=swap"
+  rel="stylesheet"
+/>
+<link
+  href="https://fonts.googleapis.com/css?family=Archivo+Black|Istok+Web&display=swap"
+  rel="stylesheet"
+/>
+
+<!-- CARRUCEL PELICULAS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css" />
+
+<div class="container-fluid fondo-registro">
+  <div class="row align-items-center justify-content-center">
+    <div class="col-md-6 align-self-center text-center">
+      <form
+        [formGroup]="registroForm"
+        (ngSubmit)="enviar(registroForm.value)"
+        class="form-login"
+      >
+        <div class="form-group">
+          <input
+            formControlName="nombre"
+            class="input-footer"
+            type="text"
+            placeholder="Nombre"
+          />
+        </div>
+
+        <div class="form-group">
+          <input
+            formControlName="edad"
+            class="input-footer"
+            type="text"
+            placeholder="Edad"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            formControlName="correo"
+            class="input-footer"
+            type="text"
+            placeholder="Correo"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            formControlName="password"
+            class="input-footer"
+            type="password"
+            placeholder="Contraseña"
+          />
+        </div>
+
+        <button
+          [disabled]="registroForm.invalid"
+          class="btn-footer"
+          type="submit"
+        >
+          Registrarse
+        </button>
+        <br />
+        <br />
+        <small
+          ><a routerLink="/login"> ¿ya tienes cuenta? inicia sesion </a></small
+        >
+      </form>
+    </div>
+  </div>
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+  crossorigin="anonymous"
+></script>
