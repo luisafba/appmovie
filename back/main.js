@@ -8,6 +8,7 @@ const capitulosRoutes = require("./routes/rutaCapitulo");
 const categoriasRoutes = require("./routes/rutaCategoria");
 const productosRoutes = require("./routes/rutaProducto");
 const temporadasRoutes = require("./routes/rutaTemporada");
+const buscadorRoutes = require("./routes/buscador.routes");
 
 const usuariosRoutes = require("./routes/rutaUsuario");
 const loginRoutes = require("./routes/rutaLogin");
@@ -54,7 +55,7 @@ app.use(cors({ origen: "http://localhost:4200" }));
 })*/
 
 
-const apiGroupRoutes = [capitulosRoutes, categoriasRoutes, productosRoutes, temporadasRoutes, usuariosRoutes, loginRoutes];
+const apiGroupRoutes = [capitulosRoutes, categoriasRoutes, productosRoutes, temporadasRoutes, usuariosRoutes, loginRoutes, buscadorRoutes];
 
 apiGroupRoutes.forEach(routes => app.use("/api", routes));
 
