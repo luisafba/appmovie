@@ -1,1 +1,1 @@
-{"options":{},"indexes":[{"v":1,"key":{"_id":1},"name":"_id_","ns":"agilesoft.productos"}]}
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"agilesoft.productos"}],"uuid":"2ae78d56a1f248bf9bbbebf656b9252e"}
