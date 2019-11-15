@@ -10,7 +10,7 @@ import { IndexComponent } from "./componentes/usuario/index/index.component";
 import { HomeComponent } from "./componentes/usuario/home/home.component";
 import { MenuComponent } from "./componentes/partes/menu/menu.component";
 import { FooterComponent } from "./componentes/partes/footer/footer.component";
-/* import { LoginComponent } from "./componentes/usuario/login/login.component"; */
+import { FormLoginComponent } from "./componentes/usuario/login/login.component";
 import { RegistroComponent } from "./componentes/usuario/registro/registro.component";
 import { PeliculaComponent } from "./componentes/usuario/pelicula/pelicula.component";
 import { AdminListaPelisComponent } from "./componentes/admin/admin-lista-pelis/admin-lista-pelis.component";
@@ -35,10 +35,10 @@ const routes: Routes = [
     path: "registro",
     component: RegistroComponent
   },
-  /* {
+  {
     path: "login",
-    component: LoginComponent
-  }, */
+    component: FormLoginComponent
+  },
   {
     path: "peliculas",
     component: PeliculaComponent,
@@ -123,7 +123,7 @@ const routes: Routes = [
     HomeComponent,
     MenuComponent,
     FooterComponent,
-    /*     LoginComponent, */
+    FormLoginComponent,
     RegistroComponent,
     PeliculaComponent,
     AdminListaPelisComponent,

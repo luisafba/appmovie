@@ -1,11 +1,11 @@
-/* import { Injectable } from "@angular/core";
+import { Injectable } from "@angular/core";
 import {
   Router,
   ActivatedRouteSnapshot,
   RouterStateSnapshot
 } from "@angular/router";
 import { CanActivate } from "@angular/router";
-import { LoginService } from "../login.service";
+import { LoginService } from "../servicios/login.service";
 
 @Injectable()
 export class AdminGuard implements CanActivate {
@@ -24,4 +24,3 @@ export class AdminGuard implements CanActivate {
     return true;
   }
 }
- */

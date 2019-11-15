@@ -1,18 +1,15 @@
-/* import { Injectable } from "@angular/core";
+import { Injectable } from "@angular/core";
 import {
   Router,
   ActivatedRouteSnapshot,
   RouterStateSnapshot
 } from "@angular/router";
 import { CanActivate } from "@angular/router";
-import { LoginService } from "../login.service";
+import { LoginService } from "../servicios/login.service";
 
 @Injectable()
 export class CanActivateViaAuthGuard implements CanActivate {
-  constructor(
-    private _loginService: LoginService,
-    private router: Router
-  ) {}
+  constructor(private _loginService: LoginService, private router: Router) {}
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -24,4 +21,3 @@ export class CanActivateViaAuthGuard implements CanActivate {
     return true;
   }
 }
- */
