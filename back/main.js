@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const morgan = require("morgan");
 
 const capitulosRoutes = require("./routes/rutaCapitulo");
 const categoriasRoutes = require("./routes/rutaCategoria");
@@ -35,6 +36,7 @@ mongoose
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
+app.use(morgan('dev'));
 
 app.use(cors());
 //app.options('*', cors())
