@@ -46,7 +46,7 @@ export class AdminNuevoEditarComponent implements OnInit {
       .subscribe(response => {
         const id = response._id;
         this.isLoadingResults = false;
-        this.router.navigate(["/home"]);
+        this.router.navigate(["/nuevoEditarPelicula"]);
         this.notificacionService.success(
           "Película registrada satisfactoriamente!"
         );
