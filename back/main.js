@@ -5,10 +5,10 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 
-const capitulosRoutes = require("./routes/rutaCapitulo");
-const categoriasRoutes = require("./routes/rutaCategoria");
+/* const capitulosRoutes = require("./routes/rutaCapitulo"); */
+/* const categoriasRoutes = require("./routes/rutaCategoria"); */
 const productosRoutes = require("./routes/rutaProducto");
-const temporadasRoutes = require("./routes/rutaTemporada");
+/* const temporadasRoutes = require("./routes/rutaTemporada"); */
 const buscadorRoutes = require("./routes/buscador.routes");
 
 const usuariosRoutes = require("./routes/rutaUsuario");
@@ -57,7 +57,7 @@ app.use(cors({ origen: "http://localhost:4200" }));
 })*/
 
 
-const apiGroupRoutes = [capitulosRoutes, categoriasRoutes, productosRoutes, temporadasRoutes, usuariosRoutes, loginRoutes, buscadorRoutes];
+const apiGroupRoutes = [/* capitulosRoutes, categoriasRoutes */ productosRoutes, /* temporadasRoutes, */ usuariosRoutes, loginRoutes, buscadorRoutes];
 
 apiGroupRoutes.forEach(routes => app.use("/api", routes));
 

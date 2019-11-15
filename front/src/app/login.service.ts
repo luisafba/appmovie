@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+/* import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Usuario } from "./modelos/usuario.module";
 
@@ -46,3 +46,4 @@ export class LoginService {
     window.sessionStorage.setItem("usuario", JSON.stringify(usuario));
   }
 }
+ */

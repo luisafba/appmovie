@@ -10,12 +10,12 @@ import { IndexComponent } from "./componentes/usuario/index/index.component";
 import { HomeComponent } from "./componentes/usuario/home/home.component";
 import { MenuComponent } from "./componentes/partes/menu/menu.component";
 import { FooterComponent } from "./componentes/partes/footer/footer.component";
-import { LoginComponent } from "./componentes/usuario/login/login.component";
+/* import { LoginComponent } from "./componentes/usuario/login/login.component"; */
 import { RegistroComponent } from "./componentes/usuario/registro/registro.component";
 import { PeliculaComponent } from "./componentes/usuario/pelicula/pelicula.component";
 import { AdminListaPelisComponent } from "./componentes/admin/admin-lista-pelis/admin-lista-pelis.component";
 import { AdminInfoPelisComponent } from "./componentes/admin/admin-info-pelis/admin-info-pelis.component";
-import { AdminNuevoEditarComponent } from "./componentes/admin/admin-nuevo-editar/admin-nuevo-editar.component";
+/* import { AdminNuevoEditarComponent } from "./componentes/admin/admin-nuevo-editar/admin-nuevo-editar.component"; */
 
 const routes: Routes = [
   {
@@ -35,10 +35,10 @@ const routes: Routes = [
     path: "registro",
     component: RegistroComponent
   },
-  {
+  /* {
     path: "login",
     component: LoginComponent
-  },
+  }, */
   {
     path: "peliculas",
     component: PeliculaComponent,
@@ -98,8 +98,8 @@ const routes: Routes = [
         component: MenuComponent
       }
     ]
-  },
-  {
+  }
+  /*  {
     path: "nuevoEditarPelicula",
     component: AdminNuevoEditarComponent,
     children: [
@@ -113,7 +113,7 @@ const routes: Routes = [
         component: MenuComponent
       }
     ]
-  }
+  } */
 ];
 
 @NgModule({
@@ -123,12 +123,12 @@ const routes: Routes = [
     HomeComponent,
     MenuComponent,
     FooterComponent,
-    LoginComponent,
+    /*     LoginComponent, */
     RegistroComponent,
     PeliculaComponent,
     AdminListaPelisComponent,
-    AdminInfoPelisComponent,
-    AdminNuevoEditarComponent
+    AdminInfoPelisComponent
+    /*    AdminNuevoEditarComponent */
   ],
   imports: [
     BrowserModule,

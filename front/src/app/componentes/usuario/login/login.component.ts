@@ -1,4 +1,4 @@
-import { Usuario } from "./../modelos/usuario.module";
+/* import { Usuario } from "./../modelos/usuario.module";
 import { LoginService } from "./../login.service";
 import { Component, OnInit } from "@angular/core";
 import { Route } from "@angular/router";
@@ -17,10 +17,10 @@ export class FormLoginComponent implements OnInit {
       .login(usuario)
       .then(() => {
         /* this._router.navigate(["descarga"]); */
-        alert("Se logueó");
+/*         alert("Se logueó");
       })
       .catch(() => {
         alert("Usuario Inválido");
       });
   }
-}
+} */

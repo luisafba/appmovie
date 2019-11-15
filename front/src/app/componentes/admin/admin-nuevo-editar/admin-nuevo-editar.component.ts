@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+/* import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Router, ActivatedRoute } from "@angular/router";
 import { NotificacionService } from "../../../servicios/notificacion.service";
@@ -66,3 +66,4 @@ export class AdminNuevoEditarComponent implements OnInit {
     this.videoToUpload = files.item(0);
   }
 }
+ */

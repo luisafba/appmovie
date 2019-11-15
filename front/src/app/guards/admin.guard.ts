@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+/* import { Injectable } from "@angular/core";
 import {
   Router,
   ActivatedRouteSnapshot,
@@ -24,3 +24,4 @@ export class AdminGuard implements CanActivate {
     return true;
   }
 }
+ */
