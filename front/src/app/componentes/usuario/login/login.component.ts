@@ -1,24 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Usuario } from "./../modelos/usuario.module";
+import { LoginService } from "./../login.service";
+import { Component, OnInit } from "@angular/core";
+import { Route } from "@angular/router";
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: "login",
+  templateUrl: "./form-login.component.html",
+  styleUrls: ["./form-login.component.css"]
 })
-export class LoginComponent implements OnInit {
+export class FormLoginComponent implements OnInit {
+  constructor(private _loginService: LoginService) {}
 
-  logForm: FormGroup
-  constructor( private _builder: FormBuilder) {
-    this.logForm = this._builder.group({
-      correo: ['', Validators.required],
-      password: ['', Validators.required]
-    });
+  ngOnInit() {}
+  login(usuario: Usuario) {
+    this._loginService
+      .login(usuario)
+      .then(() => {
+        /* this._router.navigate(["descarga"]); */
+        alert("Se logueó");
+      })
+      .catch(() => {
+        alert("Usuario Inválido");
+      });
   }
-  enviar(values) {
-    console.log(values);
-  }
-  ngOnInit() {
-  }
-
 }
