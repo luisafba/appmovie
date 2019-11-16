@@ -11,10 +11,10 @@
      --></div>
     <div ><!-- class="MisCanciones" -->
         <div > <!-- class="actualizarProducto" -->
-             <button mat-button (click)="this.reproducirCancion()">
+             <button mat-button (click)="this.reproducirProducto()">
                     <img class="icon" src="../../assets/images/play.png" />
                 </button>
-            <form [formGroup]="cancionForm" (ngSubmit)="onFormSubmit()">
+            <form [formGroup]="ProductoForm" (ngSubmit)="onFormSubmit()">
                
                 <label for="titulo">ID:</label>
                 <input disabled type="text" formControlName="_id" />

@@ -1,0 +1,276 @@
+<router-outlet></router-outlet>
+<div class="container-fluid">
+    <!-- CONTENIDO PELICULAS -->
+    <div class="row peliculas-row">
+        <div class="col-md-6">
+            <button routerLink="nuevoEditarPelicula" type="button" class="btn btn-editar btn-lg btn-block">Editar Película o Serie</button>
+        </div>
+        <div class="col-md-6">
+            <button type="button" class="btn btn-eliminar btn-lg btn-block">Eliminar Película o Serie</button>
+        </div>
+        <div class="col-md-3 col-am-12 text-center">
+            <img src="https://sociologiadelcine.files.wordpress.com/2018/06/preciosa.jpg?w=1400" height="400" alt="">
+        </div>
+        <div class="col-md-9 col-am-12">
+            <iframe width="100%" height="400" src="https://www.youtube.com/embed/lBC6ee9oDTo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <h4>Título</h4>
+            <p>Preciosa</p>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <h4>Año de Estreno</h4>
+            <p>2009</p>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <h4>Categoría</h4>
+            <p>Película</p>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <h4>Duración</h4>
+            <p>01:50:00</p>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <h4>Director</h4>
+            <p>Lee Daniels</p>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <h4>Protagonista</h4>
+            <p>Gabourey Sidibe</p>
+        </div>
+        <div class="col-md-12">
+            <h4>Género</h4>
+            <p>Drama</p>
+        </div>
+        <div class="col-md-12">
+            <br>
+            <h4>Sinopsis</h4>
+            <p>La historia se ambienta en 1987. Clarieece Precious Jones, más conocida como Precious, es una adolescente de 16 años analfabeta y obesa. Ella vive en la ciudad de Nueva York en Harlem, donde se sitúan mayormente los afroamericanos. Su madre, Mary, es una mujer desempleada que pasa la mayor parte del tiempo frente al televisor y somete a Precious a través de abusos físicos y verbales. El profundo odio de Mary hacia su hija se debe a que Precious ha sido violada por su padre, Carl, y dio como resultado a dos embarazos. La familia reside en la sección número 8 de una vecindad de Harlem. El primer hijo de Precious es "Mongo" (Mongolia), una niña que tiene síndrome de Down y es cuidada y atendida por la abuela de Precious, aunque Mary decide obligar a la familia a que pretendan que Mongo vive con ella y Precious, y así pueda recibir dinero adicional del gobierno y pueda aparentar que Mary tiene la responsabilidad de la casa y la familia.</p>
+        </div>
+        <!-- TEMPORADAS -->
+        <div class="col-md-12">
+            <h2>Temporadas</h2>
+        </div>
+        <div class="col-md-12">
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header card-admin" id="headingOne">
+                    <h2 class="mb-0 text-center">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Temporada 1
+                        </button>
+                    </h2>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover table-sm">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th scope="col" class="th-like"><img src="assets/img/Like.png" title="Me gusta"></th>
+                                            <th scope="col" class="th-like"><img src="assets/img/DisLike.png" title="No me gusta"></th>
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Año</th>
+                                            <th scope="col">Genero</th>
+                                            <th scope="col">Clasificación</th>
+                                            <th scope="col">Director</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>10</td>
+                                            <td>2</td>
+                                            <td><a href="">Preciosa</a></td>
+                                            <td>2009</td>
+                                            <td>Drama</td>
+                                            <td>+18</td>
+                                            <td>Lee Daniels</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td>
+                                            <td>2</td>
+                                            <td><a href="">Preciosa</a></td>
+                                            <td>2009</td>
+                                            <td>Drama</td>
+                                            <td>+18</td>
+                                            <td>Lee Daniels</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10</td>
+                                            <td>2</td>
+                                            <td><a href="">Preciosa</a></td>
+                                            <td>2009</td>
+                                            <td>Drama</td>
+                                            <td>+18</td>
+                                            <td>Lee Daniels</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header card-admin" id="headingTwo">
+                    <h2 class="mb-0 text-center">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Temporada 2
+                        </button>
+                    </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-sm">
+                                <thead>
+                                    <tr class="text-center">
+                                        <th scope="col" class="th-like"><img src="assets/img/Like.png" title="Me gusta"></th>
+                                        <th scope="col" class="th-like"><img src="assets/img/DisLike.png" title="No me gusta"></th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Año</th>
+                                        <th scope="col">Genero</th>
+                                        <th scope="col">Clasificación</th>
+                                        <th scope="col">Director</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>2</td>
+                                        <td><a href="">Preciosa</a></td>
+                                        <td>2009</td>
+                                        <td>Drama</td>
+                                        <td>+18</td>
+                                        <td>Lee Daniels</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>2</td>
+                                        <td><a href="">Preciosa</a></td>
+                                        <td>2009</td>
+                                        <td>Drama</td>
+                                        <td>+18</td>
+                                        <td>Lee Daniels</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>2</td>
+                                        <td><a href="">Preciosa</a></td>
+                                        <td>2009</td>
+                                        <td>Drama</td>
+                                        <td>+18</td>
+                                        <td>Lee Daniels</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header card-admin" id="headingThree">
+                    <h2 class="mb-0 text-center">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Temporada 3
+                        </button>
+                    </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-sm">
+                                <thead>
+                                    <tr class="text-center">
+                                        <th scope="col" class="th-like"><img src="assets/img/Like.png" title="Me gusta"></th>
+                                        <th scope="col" class="th-like"><img src="assets/img/DisLike.png" title="No me gusta"></th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Año</th>
+                                        <th scope="col">Genero</th>
+                                        <th scope="col">Clasificación</th>
+                                        <th scope="col">Director</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>2</td>
+                                        <td><a href="">Preciosa</a></td>
+                                        <td>2009</td>
+                                        <td>Drama</td>
+                                        <td>+18</td>
+                                        <td>Lee Daniels</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>2</td>
+                                        <td><a href="">Preciosa</a></td>
+                                        <td>2009</td>
+                                        <td>Drama</td>
+                                        <td>+18</td>
+                                        <td>Lee Daniels</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>2</td>
+                                        <td><a href="">Preciosa</a></td>
+                                        <td>2009</td>
+                                        <td>Drama</td>
+                                        <td>+18</td>
+                                        <td>Lee Daniels</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+        <!-- /TEMPORADAS -->
+        <!-- COMENTARIOS -->
+        <div class="col-md-12">
+            <h2>Comentarios</h2>
+        </div>            
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover table-sm">
+                    <thead>
+                        <tr class="text-center">
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">Edad</th>
+                            <th scope="col">Comentario</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Eduardito Manos de Tirejas</td>
+                            <td>eduardo@eduardo.com</td>
+                            <td>24</td>
+                            <td><p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p></td>
+                            <td><button class="btn btn-eliminar btn-sm">Eliminar</button></td>
+                        </tr>
+                        <tr>
+                            <td>Eduardito Manos de Tirejas</td>
+                            <td>eduardo@eduardo.com</td>
+                            <td>24</td>
+                            <td><p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p></td>
+                            <td><button class="btn btn-eliminar btn-sm">Eliminar</button></td>
+                        </tr>
+                        <tr>
+                            <td>Eduardito Manos de Tirejas</td>
+                            <td>eduardo@eduardo.com</td>
+                            <td>24</td>
+                            <td><p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p></td>
+                            <td><button class="btn btn-eliminar btn-sm">Eliminar</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- /COMENTARIOS -->
+    </div>
+    <!-- /CONTENIDO PELICULAS -->
+</div>

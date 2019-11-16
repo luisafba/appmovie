@@ -19,7 +19,7 @@ const usuariosShema = new Schema({
     type: String
   },
   imagen: {
-    type: String,
+    type: File,
     default: ""
   },
   role: {
