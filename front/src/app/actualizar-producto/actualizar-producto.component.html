@@ -1,0 +1,60 @@
+<header></header>
+<!-- <link href="https://fonts.googleapis.com/css?family=Great+Vibes|ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+ --><div ><!-- class="contenedorCrear" -->
+    <div class="loading-shade" *ngIf="isLoadingResults">
+        <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <div ><!-- class="tituloListaCanciones" -->
+       <!-- <img > src="../../assets/images/flecha-izq.png" alt="" -->
+        <h2>Actualizar Producto</h2>
+        <!-- <img src="../../assets/images/guardar.png" width="30px" height="30px" alt="">
+     --></div>
+    <div ><!-- class="MisCanciones" -->
+        <div > <!-- class="actualizarProducto" -->
+             <button mat-button (click)="this.reproducirCancion()">
+                    <img class="icon" src="../../assets/images/play.png" />
+                </button>
+            <form [formGroup]="cancionForm" (ngSubmit)="onFormSubmit()">
+               
+                <label for="titulo">ID:</label>
+                <input disabled type="text" formControlName="_id" />
+                <label for="titulo">Título:</label>
+                <input formControlName="titulo" type="text" />
+                <label for="duracion">Duración:</label>
+                <input formControlName="duracion" type="Number" name="duracion" id="duracion" />
+                <label for="genero">Género:</label>
+                <select name="genero" id="genero" formControlName="genero">
+                    <option value="Salsa">Salsa</option>
+                    <option value="Rock">Rock</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Vallenato">Vallenato</option>
+                    <option value="Electronica">Electronica</option>
+                    <option value="Gospel">Gospel</option>
+                    <option value="Metal">Metal</option>
+                    <option value="Ranchera">Ranchera</option>
+                    <option value="Rap">Rap</option>
+                    <option value="Merengue">Merengue</option>
+                </select>
+                <label for="artista">Artista: </label>
+                <input formControlName="artista" type="text" name="artista" id="artista" />
+                <label for="archivo">Archivo: </label>
+                <input type="file" accept=".mp3,audio/*" (change)="onSelectFile($event)" name="archivo" id="archivo"
+                    #fileInput>
+
+
+                <button [disabled]="!cancionForm.valid" type="submit">Actualizar</button>
+            </form>
+        </div>
+        <div class="Reproductor">
+            <img class="imagenReproductor" src="../../assets/images/night-3084237__340.jpg" width="100%"
+                height="100%" />
+            <div class="lineaReproductor">
+                <audio controls="controls" preload="metadata" #audioOption> 
+                    <source src="" type="audio/mp3"/>
+                </audio>
+            </div>
+            <MARQUEE  WIDTH=100% HEIGHT=60 ALIGN=BOTTOM>{{cancionSeleccionada}}</MARQUEE>
+
+        </div>
+    </div>
+</div>

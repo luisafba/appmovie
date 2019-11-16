@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { CrearCapituloComponent } from './crear-capitulo/crear-capitulo.component';
 import { CrearProductoComponent } from './crear-producto/crear-producto.component';
 import { HomeComponentComponent } from './home-component/home-component.component';
+import { ActualizarProductoComponent } from './actualizar-producto/actualizar-producto.component';
 
 const routes: Routes = [
   {
@@ -28,7 +29,8 @@ const routes: Routes = [
     AppComponent,
     CrearCapituloComponent,
     CrearProductoComponent,
-    HomeComponentComponent
+    HomeComponentComponent,
+    ActualizarProductoComponent
   ],
   imports: [
     BrowserModule,
