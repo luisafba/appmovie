@@ -1,0 +1,60 @@
+<app-menu></app-menu>
+<div>
+  <div>
+    <b>INFORMACIÓN DEL USUARIO</b>
+  </div>
+  <div>
+    <div>
+      <div>
+        <label for="">IMAGEN: </label>
+      </div>
+      <div>
+        <label for="">NOMBRE: </label>
+      </div>
+      <div>
+        <label for="">EDAD: </label>
+      </div>
+      <div>
+        <label for="">CORREO: </label>
+      </div>
+      <div>
+        <label for="">PASSWORD: </label>
+      </div>
+      <div>
+        <label for="">ROLE: </label>
+      </div>
+    </div>
+
+    <div>
+      <div><input type="text" size="50px" [(ngModel)]="usuario.imagen" /></div>
+      <div><input type="text" size="50px" [(ngModel)]="usuario.nombre" /></div>
+      <div><input type="text" size="50px" [(ngModel)]="usuario.edad" /></div>
+      <div><input type="text" size="50px" [(ngModel)]="usuario.correo" /></div>
+      <div>
+        <input type="password" size="50px" (ngModel)="(usuario.password)" />
+      </div>
+      <div>
+        <select
+          class="inputPerfil"
+          [disabled]="
+            usuarioLogueado.role !== 'Admin' ||
+            usuario._id === usuarioLogueado._id
+          "
+          [(ngModel)]="usuario.role"
+        >
+          <option>Regular</option>
+          <option>Admin</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="botones">
+    <div></div>
+    <div>
+      <button (click)="actualizarUsuario()">ACTUALIZAR</button>
+    </div>
+  </div>
+  <div>
+    <a routerLink="/home">Volver</a>
+  </div>
+</div>
