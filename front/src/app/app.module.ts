@@ -17,6 +17,7 @@ import { AdminListaPelisComponent } from "./componentes/admin/admin-lista-pelis/
 import { AdminInfoPelisComponent } from "./componentes/admin/admin-info-pelis/admin-info-pelis.component";
 import { CanActivateViaAuthGuard } from "./guards/auth.guard";
 import { AdminGuard } from "./guards/admin.guard";
+import { InfoPerfilComponent } from './componentes/usuario/info-perfil/info-perfil.component';
 /* import { AdminNuevoEditarComponent } from "./componentes/admin/admin-nuevo-editar/admin-nuevo-editar.component"; */
 
 const routes: Routes = [
@@ -40,6 +41,10 @@ const routes: Routes = [
   {
     path: "login",
     component: FormLoginComponent
+  },
+  {
+    path: "ActualizarPerfil",
+    component: InfoPerfilComponent
   },
   {
     path: "peliculas",
@@ -133,7 +138,8 @@ const routes: Routes = [
     RegistroComponent,
     PeliculaComponent,
     AdminListaPelisComponent,
-    AdminInfoPelisComponent
+    AdminInfoPelisComponent,
+    InfoPerfilComponent
     /*    AdminNuevoEditarComponent */
   ],
   imports: [
