@@ -1,39 +1,39 @@
 <app-menu></app-menu>
 <div>
-  <div>
-    <b>INFORMACIÓN DEL USUARIO</b>
+  <div class="col-md-12">
+    <h1 class="titulo-admin">Editar Información de usuario</h1>
   </div>
-  <div>
-    <div>
-      <div>
-        <label for="">IMAGEN: </label>
+  <div class="col-md-12">
+    <div class="form-nuevo">
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="">IMAGEN: </label>
+        <input
+          type="file"
+          accept="image/*"
+          id="imagen"
+          (change)="handleImageInput($event.target.files)"
+          size="50px"
+          [(ngModel)]="usuario.imagen"
+        />
       </div>
-      <div>
-        <label for="">NOMBRE: </label>
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="">NOMBRE: </label
+        ><input type="text" size="50px" [(ngModel)]="usuario.nombre" />
       </div>
-      <div>
-        <label for="">EDAD: </label>
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="">EDAD: </label
+        ><input type="text" size="50px" [(ngModel)]="usuario.edad" />
       </div>
-      <div>
-        <label for="">CORREO: </label>
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="">CORREO: </label
+        ><input type="text" size="50px" [(ngModel)]="usuario.correo" />
       </div>
-      <div>
-        <label for="">PASSWORD: </label>
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="">PASSWORD: </label>
+        <input type="password" size="50px" [(ngModel)]="usuario.password" />
       </div>
-      <div>
-        <label for="">ROLE: </label>
-      </div>
-    </div>
-
-    <div>
-      <div><input type="text" size="50px" [(ngModel)]="usuario.imagen" /></div>
-      <div><input type="text" size="50px" [(ngModel)]="usuario.nombre" /></div>
-      <div><input type="text" size="50px" [(ngModel)]="usuario.edad" /></div>
-      <div><input type="text" size="50px" [(ngModel)]="usuario.correo" /></div>
-      <div>
-        <input type="password" size="50px" (ngModel)="(usuario.password)" />
-      </div>
-      <div>
+      <div class="form-group row">
+        <label class="col-sm-3 col-form-label" for="">ROLE: </label>
         <select
           class="inputPerfil"
           [disabled]="
@@ -50,8 +50,13 @@
   </div>
   <div class="botones">
     <div></div>
-    <div>
-      <button (click)="actualizarUsuario()">ACTUALIZAR</button>
+    <div class="col-md-4 offset-md-4 col-sm-12">
+      <button
+        (click)="actualizarUsuario()"
+        class="btn btn-editar btn-lg btn-block"
+      >
+        ACTUALIZAR
+      </button>
     </div>
   </div>
   <div>

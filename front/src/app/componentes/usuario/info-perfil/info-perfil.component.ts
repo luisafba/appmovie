@@ -48,7 +48,7 @@ export class InfoPerfilComponent implements OnInit {
       if (this.usuario._id === this.usuarioLogueado._id) {
         this._loginService.actualizarUsuario(this.usuario);
       }
-      this.router.navigate(["descarga"]);
+      this.router.navigate(["home"]);
     });
   }
 }
