@@ -15,6 +15,8 @@ import { RegistroComponent } from "./componentes/usuario/registro/registro.compo
 import { PeliculaComponent } from "./componentes/usuario/pelicula/pelicula.component";
 import { AdminListaPelisComponent } from "./componentes/admin/admin-lista-pelis/admin-lista-pelis.component";
 import { AdminInfoPelisComponent } from "./componentes/admin/admin-info-pelis/admin-info-pelis.component";
+import { CanActivateViaAuthGuard } from "./guards/auth.guard";
+import { AdminGuard } from "./guards/admin.guard";
 /* import { AdminNuevoEditarComponent } from "./componentes/admin/admin-nuevo-editar/admin-nuevo-editar.component"; */
 
 const routes: Routes = [
@@ -42,6 +44,7 @@ const routes: Routes = [
   {
     path: "peliculas",
     component: PeliculaComponent,
+    canActivate: [CanActivateViaAuthGuard],
     children: [
       {
         path: "",
@@ -56,7 +59,8 @@ const routes: Routes = [
   },
   {
     path: "home",
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [CanActivateViaAuthGuard]
     /* children: [
       {
         path: "",
@@ -82,7 +86,8 @@ const routes: Routes = [
         path: "",
         component: MenuComponent
       }
-    ]
+    ],
+    canActivate: [CanActivateViaAuthGuard]
   },
   {
     path: "listaPeliculas",
@@ -97,7 +102,8 @@ const routes: Routes = [
         path: "",
         component: MenuComponent
       }
-    ]
+    ],
+    canActivate: [CanActivateViaAuthGuard]
   }
   /*  {
     path: "nuevoEditarPelicula",
@@ -138,7 +144,7 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [CanActivateViaAuthGuard, AdminGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

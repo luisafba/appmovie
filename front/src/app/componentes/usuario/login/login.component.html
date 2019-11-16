@@ -7,8 +7,8 @@
             ngModel
             type="email"
             class="input-footer"
-            formControlName="correo"
             placeholder="Correo electrónico"
+            name="email"
           />
         </div>
         <div class="form-group">
@@ -16,15 +16,11 @@
             ngModel
             type="password"
             class="input-footer"
-            formControlName="password"
             placeholder="Contraseña"
+            name="pw"
           />
         </div>
-        <button
-          routerLink="/home"
-          class="btn btn-footer"
-          [disabled]="logForm.invalid"
-        >
+        <button [disabled]="f.invalid" type="submit" class="btn btn-footer">
           Ingresar
         </button>
         <br />

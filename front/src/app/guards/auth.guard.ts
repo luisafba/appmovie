@@ -15,7 +15,7 @@ export class CanActivateViaAuthGuard implements CanActivate {
     state: RouterStateSnapshot
   ): boolean {
     if (!this._loginService.obtenerUsuario()) {
-      this.router.navigate(["/"]);
+      this.router.navigate(["index"]);
       return false;
     }
     return true;

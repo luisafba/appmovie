@@ -16,7 +16,7 @@ export class FormLoginComponent implements OnInit {
     this._loginService
       .login(usuario)
       .then(() => {
-        this._router.navigate(["inicio"]);
+        this._router.navigate(["home"]);
       })
       .catch(() => {
         alert("Usuario Inválido");
