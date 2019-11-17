@@ -19,6 +19,9 @@ import { CanActivateViaAuthGuard } from "./guards/auth.guard";
 import { AdminGuard } from "./guards/admin.guard";
 import { InfoPerfilComponent } from "./componentes/usuario/info-perfil/info-perfil.component";
 import { AdminEditarUsuariosComponent } from "./componentes/admin/admin-editar-usuarios/admin-editar-usuarios.component";
+import { AdminProductoComponent } from "./componentes/admin/admin-producto/admin-producto.component";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { FavoritosComponent } from "./componentes/usuario/favoritos/favoritos.component";
 /* import { AdminNuevoEditarComponent } from "./componentes/admin/admin-nuevo-editar/admin-nuevo-editar.component"; */
 
 const routes: Routes = [
@@ -48,8 +51,18 @@ const routes: Routes = [
     component: InfoPerfilComponent
   },
   {
+    path: "ActualizarPerfil/:id",
+    component: InfoPerfilComponent
+  },
+  {
     path: "editarUsuarios",
     component: AdminEditarUsuariosComponent,
+    canActivate: [CanActivateViaAuthGuard]
+  },
+
+  {
+    path: "favoritos",
+    component: FavoritosComponent,
     canActivate: [CanActivateViaAuthGuard]
   },
   {
@@ -115,10 +128,10 @@ const routes: Routes = [
       }
     ],
     canActivate: [CanActivateViaAuthGuard]
-  }
-  /*  {
-    path: "nuevoEditarPelicula",
-    component: AdminNuevoEditarComponent,
+  },
+  {
+    path: "adminPelicula/:id",
+    component: AdminProductoComponent,
     children: [
       {
         path: "",
@@ -130,7 +143,22 @@ const routes: Routes = [
         component: MenuComponent
       }
     ]
-  } */
+  },
+  {
+    path: "adminPelicula",
+    component: AdminProductoComponent,
+    children: [
+      {
+        path: "",
+        pathMatch: "prefix",
+        redirectTo: "menu"
+      },
+      {
+        path: "",
+        component: MenuComponent
+      }
+    ]
+  }
 ];
 
 @NgModule({
@@ -146,11 +174,14 @@ const routes: Routes = [
     AdminListaPelisComponent,
     AdminInfoPelisComponent,
     InfoPerfilComponent,
-    AdminEditarUsuariosComponent
+    AdminEditarUsuariosComponent,
     /*    AdminNuevoEditarComponent */
+    AdminProductoComponent,
+    FavoritosComponent
   ],
   imports: [
     BrowserModule,
+    NgbModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,

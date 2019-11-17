@@ -1,6 +1,10 @@
 <router-outlet></router-outlet>
 <div class="container-fluid">
     <!-- CONTENIDO PELICULAS -->
+    <div class="loading-shade"
+        *ngIf="isLoadingResults">
+    <div class="spinner-border"></div>
+    </div>
     <div class="row peliculas-row">
         <div class="col-md-6">
             <button routerLink="nuevoEditarPelicula" type="button" class="btn btn-editar btn-lg btn-block">Editar Película o Serie</button>

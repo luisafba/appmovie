@@ -15,13 +15,7 @@ const storage = multer.diskStorage({
   },
   filename: (req, file, cb) => {
     timemiles = new Date().getTime();
-    const filename =
-      timemiles +
-      "-" +
-      file.originalname
-        .toLowerCase()
-        .split(" ")
-        .join("-");
+    const filename = timemiles + "-" + file.originalname.toLowerCase().split(" ").join("-");
     cb(null, filename);
   }
 });
@@ -33,18 +27,24 @@ var upload = multer({
     fileSize: 1024 * 1024 * 1024
   },
   fileFilter: (req, file, cb) => {
-    if (
-      file.mimetype == "video/*" ||
-      file.mimetype.indexOf("video/") != -1 ||
-      file.mimetype == "image/*" ||
-      file.mimetype.indexOf("image/") != -1
-    ) {
-      cb(null, true);
+    if (file.fieldname === "video") { // if uploading resume
+      if (file.mimetype == "video/mp4" || file.mimetype.indexOf("video/mp4") != -1) {
+        cb(null, true);
+      } else {
+        cb(null, false);
+        return cb(
+          new Error("El formato de archivo seleccionado no es permitido.")
+        );
+      }
     } else {
-      cb(null, false);
-      return cb(
-        new Error("El formato de archivo seleccionado no es permitido.")
-      );
+      if (file.mimetype == "image/*" || file.mimetype.indexOf("image/") != -1) {
+        cb(null, true);
+      } else {
+        cb(null, false);
+        return cb(
+          new Error("El formato de archivo seleccionado no es permitido.")
+        );
+      }
     }
   }
 });
@@ -54,20 +54,23 @@ router.post("/productos", upload.fields([{ name: "imagen", maxCount: 1 }, { name
   console.log("Creando producto...");
   const imageName = req.files.imagen[0].filename;
   const videoName = req.files.video[0].filename;
+  console.log("Creando producto..." + imageName + videoName);
 
+  const url = req.protocol + '://' + req.get('host')
   const producto = new Productos({
     nombre: req.body.nombre,
     genero: req.body.genero,
     anio: req.body.anio,
+    clasificacion: req.body.clasificacion,
     duracion: req.body.duracion,
+    like: 0,
+    dislike: 0,
     sinopsis: req.body.sinopsis,
     edad: req.body.edad,
     director: req.body.director,
     protagonista: req.body.protagonista,
-    //categoria: req.body.categoria,
-    favorito: req.body.favorito,
-    imagen: imageName,
-    archivo: videoName
+    imagen: url + '/' + DIR + imageName,
+    video: url + '/' + DIR + videoName
   });
 
   producto
@@ -85,27 +88,27 @@ router.post("/productos", upload.fields([{ name: "imagen", maxCount: 1 }, { name
           errorMensaje: "Error al registrar el producto"
         });
     });
-  /*Canciones.create(req.body)
-    .then(Canciones => {
-      res.send(Canciones);
-    })
-    .catch(next);*/
 });
 // DELETE
 router.delete("/productos/:id", (req, res, next) => {
   Productos.findById(req.params.id, (err, productoConsultado) => {
 
     const url = req.protocol + '://' + req.get('host')
-    const nombreArchivo = '.' + (productoConsultado.archivo.substring(url.length));
-    console.log(nombreArchivo);
     Productos
       .findByIdAndDelete({ _id: req.params.id })
       .then((productos) => {
-        const fs = require('fs');
+        let nombreArchivo = '.' + (productoConsultado.video.substring(url.length));
+        let fs = require('fs');
         console.log(fs.realpath);
         fs.unlink(nombreArchivo, (err) => {
           if (err) console.log(err);
-          console.log('Se eliminó el archivo');
+          console.log('Se eliminó el video');
+        })
+        nombreArchivo = '.' + (productoConsultado.imagen.substring(url.length));
+        console.log(fs.realpath);
+        fs.unlink(nombreArchivo, (err) => {
+          if (err) console.log(err);
+          console.log('Se eliminó la imagen');
         })
         res.send(productos);
       })
@@ -117,8 +120,8 @@ router.delete("/productos/:id", (req, res, next) => {
 // GET
 router.get("/productos/:id", (req, res, next) => {
   console.log("Consultando...");
-  Productos.findById(req.params.id, (err, productos) => {
-    res.status(200).send({ productos });
+  Productos.findById(req.params.id, (err, producto) => {
+    res.status(200).send({ producto });
   });
 });
 
@@ -126,13 +129,13 @@ router.get("/productos/:id", (req, res, next) => {
 router.get("/productos/", (req, res, next) => {
   console.log("Consultando productos... ");
   let filter = {}
-  if(req.query.nombre){
-    filter.nombre = {'$regex': req.query.nombre};
+  if (req.query.nombre) {
+    filter.nombre = { '$regex': req.query.nombre };
   }
-  if(req.query.genero){
+  if (req.query.genero) {
     filter.genero = req.query.genero;
   }
-  Productos.find(filter, function (err, productos){
+  Productos.find(filter, function (err, productos) {
     res.status(200).send({ productos });
   });
 });
@@ -152,42 +155,56 @@ module.exports = router;
     });
 */
 // PUT
-router.put("/productos/:id", upload.single('archivo'), (req, res, next) => {
+router.put("/productos/:id", upload.fields([{ name: "imagen", maxCount: 1 }, { name: "video", maxCount: 1 }]), (req, res, next) => {
   console.log("Actualizando..." + req.body.archivo);
   const url = req.protocol + '://' + req.get('host')
-  let nombreArchivo="";
+  let videoArchivo = "";
+  let imagenArchivo = "";
   const borrar = req.file;
   Productos.findById(req.params.id, (err, productoConsultado) => {
     if (borrar) {
       nombreArchivo = url + '/' + DIR + req.file.filename;
+      imagenArchivo = req.files.imagen[0].filename;
+      videoArchivo = req.files.video[0].filename;
     } else {
-      nombreArchivo = productoConsultado.archivo;
+      imagenArchivo = productoConsultado.imagen;
+      videoArchivo = productoConsultado.video;
     }
     Productos.updateOne(
       { _id: productoConsultado._id },  // <-- find stage
-      { $set: {                // <-- set stage
+      {
+        $set: {                // <-- set stage
           nombre: req.body.nombre,
           genero: req.body.genero,
           anio: req.body.anio,
+          clasificacion: req.body.clasificacion,
           duracion: req.body.duracion,
+          like: req.body.like,
+          dislike: req.body.dislike,
           sinopsis: req.body.sinopsis,
           edad: req.body.edad,
           director: req.body.director,
-          categoria: req.body.categoria,
           protagonista: req.body.protagonista,
-          favorito: req.body.favorito,
-          archivo: nombreArchivo
-        } 
-      } 
+          imagen: imagenArchivo,
+          video: videoArchivo
+
+        }
+      }
     ).then(result => {
       console.log(result);
       if (borrar) {
-        const nombreArchivo = '.' + (productoConsultado.archivo.substring(url.length));
-        const fs = require('fs');
+        let nombreArchivo = '.' + (productoConsultado.video.substring(url.length));
+        let fs = require('fs');
         console.log(fs.realpath);
         fs.unlink(nombreArchivo, (err) => {
           if (err) console.log(err);
-          console.log('Se eliminó el archivo anterior');
+          console.log('Se eliminó el video anterior');
+        })
+        nombreArchivo = '.' + (productoConsultado.imagen.substring(url.length));
+        console.log(fs.realpath);
+        fs.unlink(nombreArchivo, (err) => {
+          if (err) console.log(err);
+          console.log('Se eliminó la imagen anterior');
         })
       }
       Productos.findById(req.params.id, (err, productoConsultado) => {

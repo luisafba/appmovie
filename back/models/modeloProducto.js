@@ -43,11 +43,7 @@ const productosSchema = new Schema({
   protagonista: {
     type: String
   },
-  categoria: { 
-      type: String,
-      enum: ["Película", "Serie"] 
-  },
-  archivo: {
+  video: {
     type: String,
   }
 });

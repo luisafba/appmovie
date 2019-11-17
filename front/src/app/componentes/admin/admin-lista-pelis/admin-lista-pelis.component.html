@@ -3,9 +3,18 @@
     <!-- TABLA CON DATOS -->
     <div class="row">
         <div class="col-md-12">
-            <h1 class="titulo-admin">Peliculas y Series</h1>
+            <h1 class="titulo-admin">Películas</h1>
         </div>
         <div class="col-md-12">
+            <div style="text-align: right;">
+                <select class="btn btn-footer" style="width: auto" [(ngModel)]="pageSize">
+                    <option [ngValue]="1">1 item per page</option>
+                    <option [ngValue]="5">5 items per page</option>
+                    <option [ngValue]="10">10 items per page</option>
+                    <option [ngValue]="50">50 items per page</option>
+                </select>
+            </div>
+
             <div class="table-responsive">
                 <table class="table table-bordered table-hover table-sm">
                     <thead>
@@ -20,119 +29,41 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>10</td>
-                            <td>2</td>
-                            <td><a href="">Preciosa</a></td>
-                            <td>2009</td>
-                            <td>Drama</td>
-                            <td>+18</td>
-                            <td>Lee Daniels</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>2</td>
-                            <td><a href="">Preciosa</a></td>
-                            <td>2009</td>
-                            <td>Drama</td>
-                            <td>+18</td>
-                            <td>Lee Daniels</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>2</td>
-                            <td><a href="">Preciosa</a></td>
-                            <td>2009</td>
-                            <td>Drama</td>
-                            <td>+18</td>
-                            <td>Lee Daniels</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>2</td>
-                            <td><a href="">Preciosa</a></td>
-                            <td>2009</td>
-                            <td>Drama</td>
-                            <td>+18</td>
-                            <td>Lee Daniels</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>2</td>
-                            <td><a href="">Preciosa</a></td>
-                            <td>2009</td>
-                            <td>Drama</td>
-                            <td>+18</td>
-                            <td>Lee Daniels</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>2</td>
-                            <td><a href="">Preciosa</a></td>
-                            <td>2009</td>
-                            <td>Drama</td>
-                            <td>+18</td>
-                            <td>Lee Daniels</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>2</td>
-                            <td><a href="">Preciosa</a></td>
-                            <td>2009</td>
-                            <td>Drama</td>
-                            <td>+18</td>
-                            <td>Lee Daniels</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>2</td>
-                            <td><a href="">Preciosa</a></td>
-                            <td>2009</td>
-                            <td>Drama</td>
-                            <td>+18</td>
-                            <td>Lee Daniels</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>2</td>
-                            <td><a href="">Preciosa</a></td>
-                            <td>2009</td>
-                            <td>Drama</td>
-                            <td>+18</td>
-                            <td>Lee Daniels</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>2</td>
-                            <td><a href="">Preciosa</a></td>
-                            <td>2009</td>
-                            <td>Drama</td>
-                            <td>+18</td>
-                            <td>Lee Daniels</td>
+                        <tr *ngFor="let producto of productos; index as i">
+                            <td>
+                                {{ producto.like }}
+                            </td>
+                            <td>
+                                {{ producto.dislike }}
+                            </td>
+                            <td>
+                                <a [routerLink]="['/adminPelicula/', producto._id]">
+                                     {{ producto.nombre }}</a>
+                            </td>
+                            <td>
+                                {{ producto.anio }}
+                            </td>
+                            <td>
+                                {{ producto.genero }}
+                            </td>
+                            <td>
+                                {{ producto.clasificacion }}
+                            </td>
+                            <td>
+                                {{ producto.director }}
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <button routerLink="/nuevoEditarPelicula" class="btn btn-footer">Nueva Pelicula o Serie</button>
-        </div>
-        <div class="col-md-12">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination pagination-sm justify-content-center">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+
+
+            <div class="col-md-12">
+                <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"
+                    class="pagination pagination-sm justify-content-center">
+                </ngb-pagination>
+            </div>
+            <button routerLink="/adminPelicula" class="btn btn-footer">Nueva Película</button>
         </div>
     </div>
 </div>
