@@ -41,6 +41,12 @@ p {
     font-weight: bold;
     border: 1px solid transparent;
 }
+
+.btn-footer:disabled, .btn-footer[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
 .form-loguin {
     background: rgba(0,0,0,0.9);
     padding: 40px 0px;

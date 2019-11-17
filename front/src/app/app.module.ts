@@ -18,7 +18,8 @@ import { AdminInfoPelisComponent } from "./componentes/admin/admin-info-pelis/ad
 import { CanActivateViaAuthGuard } from "./guards/auth.guard";
 import { AdminGuard } from "./guards/admin.guard";
 import { InfoPerfilComponent } from './componentes/usuario/info-perfil/info-perfil.component';
-/* import { AdminNuevoEditarComponent } from "./componentes/admin/admin-nuevo-editar/admin-nuevo-editar.component"; */
+import {AdminProductoComponent} from "./componentes/admin/admin-producto/admin-producto.component"
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
   {
@@ -109,10 +110,10 @@ const routes: Routes = [
       }
     ],
     canActivate: [CanActivateViaAuthGuard]
-  }
-  /*  {
-    path: "nuevoEditarPelicula",
-    component: AdminNuevoEditarComponent,
+  },
+  {
+    path: "adminPelicula/:id",
+    component: AdminProductoComponent,
     children: [
       {
         path: "",
@@ -124,7 +125,22 @@ const routes: Routes = [
         component: MenuComponent
       }
     ]
-  } */
+  },
+  {
+    path: "adminPelicula",
+    component: AdminProductoComponent,
+    children: [
+      {
+        path: "",
+        pathMatch: "prefix",
+        redirectTo: "menu"
+      },
+      {
+        path: "",
+        component: MenuComponent
+      }
+    ]
+  } 
 ];
 
 @NgModule({
@@ -139,11 +155,11 @@ const routes: Routes = [
     PeliculaComponent,
     AdminListaPelisComponent,
     AdminInfoPelisComponent,
-    InfoPerfilComponent
-    /*    AdminNuevoEditarComponent */
+    InfoPerfilComponent,
+    AdminProductoComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,NgbModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,

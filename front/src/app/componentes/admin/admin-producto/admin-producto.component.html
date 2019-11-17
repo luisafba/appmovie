@@ -1,0 +1,134 @@
+<router-outlet></router-outlet>
+<div class="container-fluid">
+    <!-- TABLA CON DATOS -->
+    <div class="row nuevo-row">
+        <div class="col-md-12">
+            <h1 class="titulo-admin">{{_id!=null?'Editar Película':'Crear Nueva Película'}}</h1>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group" *ngIf="_id!=null">
+                <div class="col-sm-12" style="text-align: center;">
+                    <video width=" 300" height="300" controls poster="{{producto.imagen}}">
+                        <source src="{{producto.video}}" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <form class="form-nuevo" [formGroup]="productoForm" (ngSubmit)="enviar()">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="nombre">Nombre:</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" formControlName="nombre" type="text" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="genero">Género:</label>
+                    <!-- "Acción", "Anime", "Aventura", "Ciencia Ficción", "Comedia", "Drama", "Musical","Suspenso", "Terror" -->
+                    <div class="col-sm-4">
+                        <select class="form-control" name="genero" id="genero" formControlName="genero">
+                            <option value="Acción">Acción</option>
+                            <option value="Anime">Anime</option>
+                            <option value="Aventura">Aventura</option>
+                            <option value="Ciencia Ficción">Ciencia Ficción</option>
+                            <option value="Comedia">Comedia</option>
+                            <option value="Drama">Drama</option>
+                            <option value="Musical">Musical</option>
+                            <option value="Suspenso">Suspenso</option>
+                            <option value="Terror">Terror</option>
+                        </select>
+                    </div>
+                    <label class="col-sm-2 col-form-label" for="clasificacion">Clasificación:</label>
+                    <div class="col-sm-4">
+                        <input class="form-control" formControlName="clasificacion" type="Number" name="clasificacion"
+                            id="clasificacion" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="anio">Año lanzamiento:</label>
+                    <div class="col-sm-2">
+                        <input class="form-control" formControlName="anio" type="Number" name="anio" id="anio" />
+                    </div>
+                    <label class="col-sm-2 col-form-label" for="duracion">Duración:</label>
+                    <div class="col-sm-2">
+                        <input class="form-control" formControlName="duracion" type="Number" name="duracion"
+                            id="duracion" />
+                    </div>
+                    <label class="col-sm-2 col-form-label" for="edad">Edad: </label>
+                    <div class="col-sm-2">
+                        <input class="form-control" formControlName="edad" type="text" name="edad" id="edad" />
+                    </div>
+                </div>
+                <div class="form-group ">
+                    <label for="sinopsis">Sinopsis: </label>
+                    <textarea class="form-control" formControlName="sinopsis" type="text" name="sinopsis" id="sinopsis"
+                        rows="1"></textarea>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="director">Director: </label>
+                    <div class="col-sm-4">
+                        <input class="form-control" formControlName="director" type="text" name="director"
+                            id="director" />
+                    </div>
+                    <label class="col-sm-2 col-form-label" for="protagonista">Protagonista: </label>
+                    <div class="col-sm-4">
+                        <input class="form-control" formControlName="protagonista" type="text" name="protagonista"
+                            id="protagonista" />
+                    </div>
+                </div>
+                <div class="form-group row" *ngIf="_id!=null">
+                    <label class="col-sm-2 col-form-label" for="like">Likes: </label>
+                    <div class="col-sm-4">
+                        <input class="form-control" formControlName="like" type="Number" name="like" id="like" />
+                    </div>
+                    <label class="col-sm-2 col-form-label" for="dislike">Dislikes: </label>
+                    <div class="col-sm-4">
+                        <input class="form-control" formControlName="dislike" type="Number" name="dislike"
+                            id="dislike" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="imagen">Imagen: </label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="file" accept="image/*"
+                            (change)="onSelectFile($event,'imagen')" name="imagen" id="imagen" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label" for="archivo">Video: </label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="file" accept="video/mp4"
+                            (change)="onSelectFile($event,'video')" name="video" id="video" #fileInput>
+                    </div>
+                </div>
+                <br />
+                <div class="form-group row">
+                    <div class="col-sm-4">
+                        <button class="btn btn-footer btn-lg btn-block" (click)="this.volver()">Volver</button>
+                    </div>
+                    <div class="col-sm-4">
+                        <button *ngIf="_id!=null" class="btn btn-footer btn-lg btn-block" type="button"
+                            (click)="this.confirmarEliminar(content)">Eliminar</button>
+                    </div>
+                    <div class="col-sm-4">
+                        <button [disabled]="!productoForm.valid" class="btn btn-footer btn-lg btn-block"
+                            type="submit">{{_id!=null?'Actualizar':'Registrar'}}</button>
+                    </div>
+                </div>
+            </form>
+            <ng-template #content let-modal>
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modalConfirmarEliminar">Confirmación</h4>
+                    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Seguro desea borrar la película?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss()">No</button>
+                    <button type="button" class="btn btn-outline-dark" (click)="modal.close()">Si</button>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>
