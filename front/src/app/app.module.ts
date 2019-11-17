@@ -17,7 +17,8 @@ import { AdminListaPelisComponent } from "./componentes/admin/admin-lista-pelis/
 import { AdminInfoPelisComponent } from "./componentes/admin/admin-info-pelis/admin-info-pelis.component";
 import { CanActivateViaAuthGuard } from "./guards/auth.guard";
 import { AdminGuard } from "./guards/admin.guard";
-import { InfoPerfilComponent } from './componentes/usuario/info-perfil/info-perfil.component';
+import { InfoPerfilComponent } from "./componentes/usuario/info-perfil/info-perfil.component";
+import { AdminEditarUsuariosComponent } from "./componentes/admin/admin-editar-usuarios/admin-editar-usuarios.component";
 /* import { AdminNuevoEditarComponent } from "./componentes/admin/admin-nuevo-editar/admin-nuevo-editar.component"; */
 
 const routes: Routes = [
@@ -45,6 +46,11 @@ const routes: Routes = [
   {
     path: "ActualizarPerfil",
     component: InfoPerfilComponent
+  },
+  {
+    path: "editarUsuarios",
+    component: AdminEditarUsuariosComponent,
+    canActivate: [CanActivateViaAuthGuard]
   },
   {
     path: "peliculas",
@@ -139,7 +145,8 @@ const routes: Routes = [
     PeliculaComponent,
     AdminListaPelisComponent,
     AdminInfoPelisComponent,
-    InfoPerfilComponent
+    InfoPerfilComponent,
+    AdminEditarUsuariosComponent
     /*    AdminNuevoEditarComponent */
   ],
   imports: [
