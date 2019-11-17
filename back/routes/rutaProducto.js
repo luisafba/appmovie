@@ -160,14 +160,18 @@ router.put("/productos/:id", upload.fields([{ name: "imagen", maxCount: 1 }, { n
   const url = req.protocol + '://' + req.get('host')
   let videoArchivo = "";
   let imagenArchivo = "";
-  const borrar = req.file;
+  const borrarVideo = req.files.video;
+  const borrarImagen = req.files.imagen;
+  console.log(borrarImagen);
   Productos.findById(req.params.id, (err, productoConsultado) => {
-    if (borrar) {
-      nombreArchivo = url + '/' + DIR + req.file.filename;
-      imagenArchivo = req.files.imagen[0].filename;
-      videoArchivo = req.files.video[0].filename;
+    if (borrarImagen) {
+      imagenArchivo = url + '/' + DIR + req.files.imagen[0].filename;
     } else {
       imagenArchivo = productoConsultado.imagen;
+    }
+    if (borrarVideo) {
+      videoArchivo = url + '/' + DIR + req.files.video[0].filename;
+    } else {
       videoArchivo = productoConsultado.video;
     }
     Productos.updateOne(
@@ -182,7 +186,6 @@ router.put("/productos/:id", upload.fields([{ name: "imagen", maxCount: 1 }, { n
           like: req.body.like,
           dislike: req.body.dislike,
           sinopsis: req.body.sinopsis,
-          edad: req.body.edad,
           director: req.body.director,
           protagonista: req.body.protagonista,
           imagen: imagenArchivo,
@@ -192,15 +195,18 @@ router.put("/productos/:id", upload.fields([{ name: "imagen", maxCount: 1 }, { n
       }
     ).then(result => {
       console.log(result);
-      if (borrar) {
-        let nombreArchivo = '.' + (productoConsultado.video.substring(url.length));
-        let fs = require('fs');
+      let nombreArchivo = '';
+      let fs = require('fs');
+      if (borrarImagen) {
+        nombreArchivo = '.' + (productoConsultado.imagen.substring(url.length));
         console.log(fs.realpath);
         fs.unlink(nombreArchivo, (err) => {
           if (err) console.log(err);
           console.log('Se eliminó el video anterior');
         })
-        nombreArchivo = '.' + (productoConsultado.imagen.substring(url.length));
+      }
+      if (borrarVideo) {
+        nombreArchivo = '.' + (productoConsultado.video.substring(url.length));
         console.log(fs.realpath);
         fs.unlink(nombreArchivo, (err) => {
           if (err) console.log(err);

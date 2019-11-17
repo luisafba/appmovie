@@ -32,10 +32,12 @@ const productosSchema = new Schema({
     type: Number
   },
   like: {
-    type: Number
+    type: Number,
+    default: 0
   },
   dislike: {
-    type: Number
+    type: Number,
+    default: 0
   },
   director: {
     type: String

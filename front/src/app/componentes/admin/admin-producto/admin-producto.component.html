@@ -8,8 +8,8 @@
         <div class="col-md-12">
             <div class="form-group" *ngIf="_id!=null">
                 <div class="col-sm-12" style="text-align: center;">
-                    <video width=" 300" height="300" controls poster="{{producto.imagen}}">
-                        <source src="{{producto.video}}" type="video/mp4">
+                    <video  #videoOption width=" 300" height="300" controls poster="{{producto.imagen}}">
+                        <source  src="{{producto.video}}" type="video/mp4">
                     </video>
                 </div>
             </div>
@@ -43,18 +43,14 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-sm-2 col-form-label" for="anio">Año lanzamiento:</label>
-                    <div class="col-sm-2">
+                    <label class="col-sm-3 col-form-label" for="anio">Año lanzamiento:</label>
+                    <div class="col-sm-3">
                         <input class="form-control" formControlName="anio" type="Number" name="anio" id="anio" />
                     </div>
-                    <label class="col-sm-2 col-form-label" for="duracion">Duración:</label>
-                    <div class="col-sm-2">
+                    <label class="col-sm-3 col-form-label" for="duracion">Duración:</label>
+                    <div class="col-sm-3">
                         <input class="form-control" formControlName="duracion" type="Number" name="duracion"
                             id="duracion" />
-                    </div>
-                    <label class="col-sm-2 col-form-label" for="edad">Edad: </label>
-                    <div class="col-sm-2">
-                        <input class="form-control" formControlName="edad" type="text" name="edad" id="edad" />
                     </div>
                 </div>
                 <div class="form-group ">
