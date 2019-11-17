@@ -140,7 +140,7 @@ const routes: Routes = [
         component: MenuComponent
       }
     ]
-  } 
+  }
 ];
 
 @NgModule({

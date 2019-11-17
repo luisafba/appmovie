@@ -63,7 +63,6 @@ updateProducto(_id:String, producto:Producto): Observable<Producto> {
   formData.append("genero", producto.genero);
   formData.append("anio", producto.anio);
   formData.append("duracion", producto.duracion);
-  formData.append("edad", producto.edad);
   formData.append("sinopsis", producto.sinopsis);
   formData.append("imagen", producto.imagen);
   formData.append("clasificacion", producto.clasificacion);
