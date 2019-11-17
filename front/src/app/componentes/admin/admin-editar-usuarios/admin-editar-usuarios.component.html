@@ -1,9 +1,9 @@
 <app-menu></app-menu>
 <div class="contenedorListadoUsuarios">
-  <div class="tituloListaUsuarios">
-    <h2>Lista De Usuarios</h2>
+  <div class="col-md-12">
+    <h2 class="titulo-admin">Lista De Usuarios</h2>
   </div>
-  <div class="buscadorListaUsuarios">
+  <div class="buscadorListaUsuarios" class="form-nuevo">
     <input
       class="buscadorUsuario"
       type="text"
@@ -15,9 +15,17 @@
   <div class="listaUsuarios">
     <div class="usuario" *ngFor="let usuario of listadoUsuarios">
       <img
+        *ngIf="!usuario.imagen"
         width="30px"
         height="30px"
         src="../../../../assets/img/Like.png"
+        alt=""
+      />
+      <img
+        *ngIf="usuario.imagen"
+        width="50px"
+        height="50px"
+        src="{{ _usuarioService.getRutaImagenesPerfil() }}{{ usuario.imagen }}"
         alt=""
       />
       <h3>{{ usuario.nombre }}</h3>
