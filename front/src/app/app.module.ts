@@ -48,11 +48,13 @@ const routes: Routes = [
   },
   {
     path: "ActualizarPerfil",
-    component: InfoPerfilComponent
+    component: InfoPerfilComponent,
+    canActivate: [CanActivateViaAuthGuard]
   },
   {
     path: "ActualizarPerfil/:id",
-    component: InfoPerfilComponent
+    component: InfoPerfilComponent,
+    canActivate: [CanActivateViaAuthGuard]
   },
   {
     path: "editarUsuarios",
@@ -132,6 +134,7 @@ const routes: Routes = [
   {
     path: "adminPelicula/:id",
     component: AdminProductoComponent,
+    canActivate: [CanActivateViaAuthGuard],
     children: [
       {
         path: "",
@@ -147,6 +150,8 @@ const routes: Routes = [
   {
     path: "adminPelicula",
     component: AdminProductoComponent,
+
+    canActivate: [CanActivateViaAuthGuard],
     children: [
       {
         path: "",

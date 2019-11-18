@@ -43,7 +43,7 @@
         <li >
             <!-- <a href="#" class="btn-administrar">Administrar</a> -->
             <div class="dropdown dropright">
-                <a class="dropdown-toggle btn-administrar" href="#" role="button" id="dropdownMenuLink"
+                <a *ngIf="usuarioActual.role === 'Admin'" class="dropdown-toggle btn-administrar" href="#" role="button" id="dropdownMenuLink"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Administrar
                 </a>
@@ -56,7 +56,7 @@
         </li>
         <br>
         <br>
-        <li (click)="cerrarSesion()"  class="text-center"><a href="#">Cerrar Sesión</a></li>
+        <li (click)="cerrarSesion()"  class="text-center"><a routerLink="/">Cerrar Sesión</a></li>
     </ul>
 </nav>
 

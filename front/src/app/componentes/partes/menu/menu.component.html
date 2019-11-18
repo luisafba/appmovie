@@ -40,7 +40,7 @@
     <li>
       <!-- <a href="#" class="btn-administrar">Administrar</a> -->
       <div class="dropdown dropright">
-        <a
+        <a *ngIf="usuarioActual.role === 'Admin'"
           class="dropdown-toggle btn-administrar"
           href="#"
           role="button"
