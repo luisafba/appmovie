@@ -7,7 +7,7 @@ const Pelicula = require('../models/modeloProducto');
 router.get('/buscarPelicula/:nombre', (req, res, next) => {
     var nombrePelicula = req.params.nombre;
     Pelicula.find({
-        titulo: new RegExp('^' + nombrePelicula + '([a-zA-Z])*$$', 'i')
+        nombre: new RegExp('^' + nombrePelicula + '([a-zA-Z])*$$', 'i')
     }, function (err, resultadoPeliculas) {
         if (err) {
             return res.status(500).json({

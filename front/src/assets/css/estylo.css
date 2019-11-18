@@ -251,6 +251,7 @@ footer {
     height: 80px;
     margin: 10px;
     border-radius: 50%;
+    cursor: pointer;
 }
 .nickname {
     font-family: 'Archivo Black', sans-serif;

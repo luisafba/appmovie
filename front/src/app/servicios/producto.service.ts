@@ -17,13 +17,13 @@ export class ProductoService {
   readonly Url_API = 'http://localhost:3000/api/productos'
 
   constructor(private http: HttpClient) { }
-  getProductos(nombre?:string, genero?:string): Observable<Producto[]> {
-    let urlConsultar = this.Url_API+"?";
+  getProductos(nombre?: String, genero?: String): Observable<Producto[]> {
+    let urlConsultar = this.Url_API + "?";
     if (nombre)
-      urlConsultar += "nombre="+nombre+"&";
+      urlConsultar += "nombre=" + nombre + "&";
     if (genero)
-      urlConsultar += "genero="+genero;
-      console.log(urlConsultar);
+      urlConsultar += "genero=" + genero;
+    console.log(urlConsultar);
     return this.http.get<Producto[]>(urlConsultar);
   }
 
@@ -60,6 +60,17 @@ export class ProductoService {
       tap(_ => console.log('fetched Producto id=' + id)),
       catchError(this.handleError<Producto>('getProducto id=' + id))
     );
+  }
+
+  gustosProductos(_id: String, like: Boolean) {
+    let formData: FormData = new FormData();
+    let url = this.Url_API + "/" + _id + "/gustos?sentimiento=";
+    if (like)
+      url += "likes";
+    else
+      url += "dislikes";
+    console.log(url);
+    return this.http.put<Producto>(url, formData, this.httpOptions);
   }
 
   updateProducto(_id: String, producto: Producto): Observable<Producto> {

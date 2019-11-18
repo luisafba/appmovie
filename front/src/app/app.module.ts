@@ -68,7 +68,7 @@ const routes: Routes = [
     canActivate: [CanActivateViaAuthGuard]
   },
   {
-    path: "peliculas",
+    path: "peliculas/:id",
     component: PeliculaComponent,
     canActivate: [CanActivateViaAuthGuard],
     children: [
@@ -87,17 +87,6 @@ const routes: Routes = [
     path: "home",
     component: HomeComponent,
     canActivate: [CanActivateViaAuthGuard]
-    /* children: [
-      {
-        path: "",
-        pathMatch: "prefix",
-        redirectTo: "menu"
-      },
-      {
-        path: "",
-        component: MenuComponent
-      }
-    ] */
   },
   {
     path: "infoPeliculas",

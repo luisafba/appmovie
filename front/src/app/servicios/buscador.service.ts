@@ -12,4 +12,7 @@ export class BuscadorService {
   buscarPelicula(titulo) {
     return this.http.get("http://localhost:3000/api/buscarPelicula/" + titulo);
   }
+  buscarPeliculaGenero(genero) {
+    return this.http.get("http://localhost:3000/api/productos/?genero=" + genero);
+  }
 }
