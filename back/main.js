@@ -47,14 +47,14 @@ app.use('/public', express.static('public'));
 
 
 
-app.use(cors({ origen: "http://localhost:4200" }));
-/*app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
+// app.use(cors({ origen: "http://localhost:4200" }));
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
   res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
   res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS');
   res.header('Allow', 'GET, PUT, POST, DELETE, OPTIONS');
   next();
-})*/
+})
 
 
 const apiGroupRoutes = [/* capitulosRoutes, categoriasRoutes */ productosRoutes, /* temporadasRoutes, */ usuariosRoutes, loginRoutes, buscadorRoutes];
