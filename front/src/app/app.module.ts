@@ -17,9 +17,12 @@ import { AdminListaPelisComponent } from "./componentes/admin/admin-lista-pelis/
 import { AdminInfoPelisComponent } from "./componentes/admin/admin-info-pelis/admin-info-pelis.component";
 import { CanActivateViaAuthGuard } from "./guards/auth.guard";
 import { AdminGuard } from "./guards/admin.guard";
-import { InfoPerfilComponent } from './componentes/usuario/info-perfil/info-perfil.component';
-import {AdminProductoComponent} from "./componentes/admin/admin-producto/admin-producto.component"
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { InfoPerfilComponent } from "./componentes/usuario/info-perfil/info-perfil.component";
+import { AdminEditarUsuariosComponent } from "./componentes/admin/admin-editar-usuarios/admin-editar-usuarios.component";
+import { AdminProductoComponent } from "./componentes/admin/admin-producto/admin-producto.component";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { FavoritosComponent } from "./componentes/usuario/favoritos/favoritos.component";
+/* import { AdminNuevoEditarComponent } from "./componentes/admin/admin-nuevo-editar/admin-nuevo-editar.component"; */
 
 const routes: Routes = [
   {
@@ -46,6 +49,21 @@ const routes: Routes = [
   {
     path: "ActualizarPerfil",
     component: InfoPerfilComponent
+  },
+  {
+    path: "ActualizarPerfil/:id",
+    component: InfoPerfilComponent
+  },
+  {
+    path: "editarUsuarios",
+    component: AdminEditarUsuariosComponent,
+    canActivate: [CanActivateViaAuthGuard]
+  },
+
+  {
+    path: "favoritos",
+    component: FavoritosComponent,
+    canActivate: [CanActivateViaAuthGuard]
   },
   {
     path: "peliculas",
@@ -156,10 +174,14 @@ const routes: Routes = [
     AdminListaPelisComponent,
     AdminInfoPelisComponent,
     InfoPerfilComponent,
-    AdminProductoComponent
+    AdminEditarUsuariosComponent,
+    /*    AdminNuevoEditarComponent */
+    AdminProductoComponent,
+    FavoritosComponent
   ],
   imports: [
-    BrowserModule,NgbModule,
+    BrowserModule,
+    NgbModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,

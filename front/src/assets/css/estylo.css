@@ -662,3 +662,138 @@ td a:hover {
         padding: 10px;
     }
 }
+
+/* FAVORITOS */
+.contenedorfavoritos {
+    display: grid;
+    width: 100%;
+    height: 1200px;
+    grid-template-areas: " titulo head imagen"
+                         " videos head  imagen"
+                         " videos head imagen";
+    grid-template-rows: 60px 2fr 1fr ;
+    grid-template-columns: 500px 1fr 1fr;
+  background: black;
+  
+    transition: width 2s, height 2s, transform 2s;
+  
+  
+  
+  
+  }
+  .titulofavoritos{
+    height: 120px;
+    background:black;
+  }
+  .seccionvideos{
+  
+  background: black;
+    grid-area: videos; 
+  
+  
+  
+  }
+  
+  .videos{
+  width: 28vw;
+    height: 320px;
+  
+  }
+  .videos:hover{
+    transform: scale();
+  }
+  h1 {
+    
+  font-size: 50px;
+    color: rgb(255, 187, 0);
+   text-align: center;
+  }
+  
+  
+  
+  h1:hover{
+  opacity: 0.3;
+  
+  }
+  
+  h2{
+  
+  
+  border-block-start-color: brown;
+  
+    color: rgb(255, 187, 0);
+    opacity: 0.8;
+  
+  width: 100%;
+  align-items: center;
+  }
+  
+  h2:hover{
+  background: url(../../../../assets/img/btnDorado.jpg);
+  
+  }
+  
+  .animacionimagen{
+  
+  animation-name: movi;
+  animation: movi 20s infinite linear alternate;
+  }
+  
+  .imagen{
+    
+    background: url(../../../../assets/img/subir3.jpg);
+  
+  }
+  .peliculasfavoritos {
+    padding: 50px;
+    border-radius: 10px;
+      padding-left: 10px;
+  grid-area: head;
+  padding-left: 65px;
+  border-radius: 20px;
+  color: rgba(241, 238, 52, 0.589);
+  
+  
+  
+  }
+  
+  
+  .peliculas:hover{
+   
+  
+  
+    cursor: pointer;
+    color: white;
+    transform: scale(0.8);
+  
+  }
+  .imagen{
+    padding: 80px;
+    padding-left: 6px;
+    border: rgba(241, 238, 52, 0.589);
+    
+    border-radius: 20px;
+  grid-area: imagen;
+  
+  
+  }
+  
+  
+  .pelis{
+    color: white;
+  }
+  hr{
+    height: 1px;
+    background: url(../../../../assets/img/btnDorado1.jpg);
+    opacity: 0.7;
+  }
+  li{
+    list-style-position: inside;
+     padding-left: 6px;
+  color: gray;
+  }
+  
+  li:hover{
+    transform: rotateY(0.8);
+  }
+/* FAVORITOS */

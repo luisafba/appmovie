@@ -20,6 +20,8 @@ export class InfoPerfilComponent implements OnInit {
   usuario: Usuario = {} as Usuario;
   usuarioLogueado: Usuario;
 
+  imagenPerfil: File;
+
   ngOnInit() {
     let usuarioOriginal = this._loginService.obtenerUsuario();
     this.usuarioLogueado = usuarioOriginal;
@@ -44,11 +46,17 @@ export class InfoPerfilComponent implements OnInit {
   }
 
   actualizarUsuario() {
-    this._userService.editarUsuario(this.usuario).subscribe(resp => {
-      if (this.usuario._id === this.usuarioLogueado._id) {
-        this._loginService.actualizarUsuario(this.usuario);
-      }
-      this.router.navigate(["home"]);
-    });
+    this._userService
+      .editarUsuario(this.usuario, this.imagenPerfil)
+      .subscribe(resp => {
+        if (this.usuario._id === this.usuarioLogueado._id) {
+          this._loginService.actualizarUsuario(this.usuario);
+        }
+        this.router.navigate(["home"]);
+      });
+  }
+
+  handleImageInput(event) {
+    this.imagenPerfil = (event.target as HTMLInputElement).files[0];
   }
 }
