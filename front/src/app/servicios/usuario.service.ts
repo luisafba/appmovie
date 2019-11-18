@@ -12,7 +12,12 @@ export class UsuarioService {
 
   private usuario: Usuario = null;
 
+  private userImagesUrl = "http://localhost:3000/public/usr-images/";
   private urlBack = "http://localhost:3000/api";
+
+  getRutaImagenesPerfil() {
+    return this.userImagesUrl;
+  }
 
   getUsuario() {
     return this.usuario;
@@ -26,10 +31,13 @@ export class UsuarioService {
     this.usuario = usuario;
   }
 
-  editarUsuario(usuario: Usuario) {
+  editarUsuario(usuario: Usuario, imagenPerfil: File) {
+    let formData: FormData = new FormData();
+    formData.append("usuario", JSON.stringify(usuario));
+    formData.append("imagen", imagenPerfil);
     return this.http.put<Usuario>(
       `${this.urlBack}/usuarios/${usuario._id}`,
-      usuario
+      formData
     );
   }
 

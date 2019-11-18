@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ProductoService } from '../../../servicios/producto.service';
@@ -30,7 +30,6 @@ export class AdminProductoComponent implements OnInit {
         nombre: ['', Validators.required],
         genero: ['', Validators.required],
         anio: ['', Validators.required],
-        edad: ['', Validators.required],
         duracion: ['', Validators.compose([Validators.required, Validators.minLength(1)])],
         sinopsis: ['', Validators.required],
         clasificacion: ['', Validators.required],
@@ -46,7 +45,6 @@ export class AdminProductoComponent implements OnInit {
         nombre: ['', Validators.required],
         genero: ['', Validators.required],
         anio: ['', Validators.required],
-        edad: ['', Validators.required],
         duracion: ['', Validators.compose([Validators.required, Validators.minLength(1)])],
         sinopsis: ['', Validators.required],
         clasificacion: ['', Validators.required],
@@ -81,7 +79,9 @@ export class AdminProductoComponent implements OnInit {
         .subscribe((res: any) => {
           const id = res.productoActualizado._id;
           this.isLoadingResults = false;
-          this.router.navigate(['/adminPelicula', id]);
+          this.router.navigateByUrl('/adminPelicula', { skipLocationChange: true }).then(() => {
+            this.router.navigate(['/adminPelicula', id]);
+        }); 
           //this.notificacionService.success("Canción actualizada satisfactoriamente!");
         }, (err: any) => {
           console.log(err);
@@ -115,7 +115,6 @@ export class AdminProductoComponent implements OnInit {
         nombre: data.producto.nombre,
         genero: data.producto.genero,
         anio: data.producto.anio,
-        edad: 1,//data.producto.edad,
         duracion: data.producto.duracion,
         sinopsis: data.producto.sinopsis,
         clasificacion: data.producto.clasificacion,

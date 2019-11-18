@@ -160,14 +160,18 @@ router.put("/productos/:id", upload.fields([{ name: "imagen", maxCount: 1 }, { n
   const url = req.protocol + '://' + req.get('host')
   let videoArchivo = "";
   let imagenArchivo = "";
-  const borrar = req.file;
+  const borrarVideo = req.files.video;
+  const borrarImagen = req.files.imagen;
+  console.log(borrarImagen);
   Productos.findById(req.params.id, (err, productoConsultado) => {
-    if (borrar) {
-      nombreArchivo = url + '/' + DIR + req.file.filename;
-      imagenArchivo = req.files.imagen[0].filename;
-      videoArchivo = req.files.video[0].filename;
+    if (borrarImagen) {
+      imagenArchivo = url + '/' + DIR + req.files.imagen[0].filename;
     } else {
       imagenArchivo = productoConsultado.imagen;
+    }
+    if (borrarVideo) {
+      videoArchivo = url + '/' + DIR + req.files.video[0].filename;
+    } else {
       videoArchivo = productoConsultado.video;
     }
     Productos.updateOne(
@@ -182,7 +186,6 @@ router.put("/productos/:id", upload.fields([{ name: "imagen", maxCount: 1 }, { n
           like: req.body.like,
           dislike: req.body.dislike,
           sinopsis: req.body.sinopsis,
-          edad: req.body.edad,
           director: req.body.director,
           protagonista: req.body.protagonista,
           imagen: imagenArchivo,
@@ -192,15 +195,18 @@ router.put("/productos/:id", upload.fields([{ name: "imagen", maxCount: 1 }, { n
       }
     ).then(result => {
       console.log(result);
-      if (borrar) {
-        let nombreArchivo = '.' + (productoConsultado.video.substring(url.length));
-        let fs = require('fs');
+      let nombreArchivo = '';
+      let fs = require('fs');
+      if (borrarImagen) {
+        nombreArchivo = '.' + (productoConsultado.imagen.substring(url.length));
         console.log(fs.realpath);
         fs.unlink(nombreArchivo, (err) => {
           if (err) console.log(err);
           console.log('Se eliminó el video anterior');
         })
-        nombreArchivo = '.' + (productoConsultado.imagen.substring(url.length));
+      }
+      if (borrarVideo) {
+        nombreArchivo = '.' + (productoConsultado.video.substring(url.length));
         console.log(fs.realpath);
         fs.unlink(nombreArchivo, (err) => {
           if (err) console.log(err);
@@ -227,6 +233,70 @@ router.put("/productos/:id", upload.fields([{ name: "imagen", maxCount: 1 }, { n
       });
   })
 });
+
+//INCREMENTAR LIKE
+router.put("/productos/:id/gustos", (req, res, next) => {
+  let sentimiento = 0;
+  if (req.query.sentimiento) {
+    if (req.query.sentimiento == "likes") {
+      sentimiento = 1;
+    } else {
+      sentimiento = 2;
+    }
+  }
+  console.log(sentimiento);
+  if (sentimiento != 0) {
+    Productos.findById(req.params.id, (err, productoConsultado) => {
+      if (sentimiento == 1)
+        productoConsultado.like = productoConsultado.like + 1;
+      else
+        productoConsultado.dislike = productoConsultado.dislike + 1;
+      Productos.updateOne(
+        { _id: productoConsultado._id },  // <-- find stage
+        {
+          $set: {                // <-- set stage
+            nombre: productoConsultado.nombre,
+            genero: productoConsultado.genero,
+            anio: productoConsultado.anio,
+            clasificacion: productoConsultado.clasificacion,
+            duracion: productoConsultado.duracion,
+            like: productoConsultado.like,
+            dislike: productoConsultado.dislike,
+            sinopsis: productoConsultado.sinopsis,
+            director: productoConsultado.director,
+            protagonista: productoConsultado.protagonista,
+            imagen: productoConsultado.imagen,
+            video: productoConsultado.video
+          }
+        }
+      ).then(result => {
+        Productos.findById(req.params.id, (err, productoConsultado2) => {
+          res.status(200).json({
+            message: "Producto actualizado satisfactoriamente!",
+            productoActualizado: productoConsultado2
+          })
+        });
+      }).catch(err => {
+        console.log(err),
+          res.status(500).json({
+            error: err
+          });
+      })
+    }).catch(err => {
+      console.log(err),
+        res.status(500).json({
+          error: err,
+          errorMensaje: "Error al consultar-actualizar likes del producto"
+        });
+    })
+  } else {
+    res.status(422).json({
+      message: "Error: Parámetros incorrectos",
+    })
+  }
+
+});
+
 //PUT
 /* router.put('/canciones/:id', (req, res, next) => {
   Console.log("ENTRÓ A LA ACTUALIZACIÓN");
@@ -239,3 +309,4 @@ router.put("/productos/:id", upload.fields([{ name: "imagen", maxCount: 1 }, { n
       })
       .catch(next)
 }) */
+

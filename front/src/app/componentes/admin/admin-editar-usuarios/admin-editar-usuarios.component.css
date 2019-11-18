@@ -1,0 +1,23 @@
+.listaUsuarios {
+  margin-top: 20px;
+  margin-left: 0;
+  border-radius: 10px;
+}
+.usuario {
+  display: flex;
+  padding: 20px;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.form-nuevo {
+  border: 1px goldenrod;
+  border-radius: 10px;
+  background-color: transparent;
+  width: 60%;
+}
+.imagenperfil {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 50%;
+  background-size: 100% auto;
+}
