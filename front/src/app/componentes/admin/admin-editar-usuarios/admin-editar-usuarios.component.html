@@ -3,9 +3,8 @@
   <div class="col-md-12">
     <h2 class="titulo-admin">Lista De Usuarios</h2>
   </div>
-  <div class="buscadorListaUsuarios" class="form-nuevo">
+  <div class="form-nuevo">
     <input
-      class="buscadorUsuario"
       type="text"
       placeholder="Buscar usuario"
       [(ngModel)]="textoBuscado"
@@ -16,20 +15,21 @@
     <div class="usuario" *ngFor="let usuario of listadoUsuarios">
       <img
         *ngIf="!usuario.imagen"
-        width="30px"
-        height="30px"
-        src="../../../../assets/img/Like.png"
+        width="50px"
+        height="50px"
+        src="../../../../assets/img/trasparente.png"
         alt=""
       />
       <img
+        class="imagenperfil"
         *ngIf="usuario.imagen"
         width="50px"
         height="50px"
         src="{{ _usuarioService.getRutaImagenesPerfil() }}{{ usuario.imagen }}"
         alt=""
       />
-      <h3>{{ usuario.nombre }}</h3>
-      <h6>{{ usuario.correo }}</h6>
+      <h3 class="col-sm-3 col-form-label">{{ usuario.nombre }}</h3>
+      <h6 class="col-sm-3 col-form-label">{{ usuario.correo }}</h6>
       <div class="editores">
         <a
           *ngIf="usuarioActual._id !== usuario._id"
@@ -46,3 +46,187 @@
     <button routerLink="/home">Volver</button>
   </div>
 </div>
+
+<!-- <div class="contenedor">
+
+    <div class="titulo">
+ 
+       <h1>LISTA DE USUARIOS</h1>
+ 
+  
+ 
+    </div>
+
+    <div  class="form-nuevo">
+    <input
+      type="text"
+      placeholder="Buscar usuario"
+      [(ngModel)]="textoBuscado"
+      (ngModelChange)="buscar()"
+    />
+  </div> 
+   <div class="cuadrousarios"> 
+      <div class="usuario">
+ 
+       
+ 
+          <img class="imagenperfil" src="../../../../assets/img/pose tumblr de perfil.jpg" height="100px" width="100px" alt="">
+ 
+    <br>
+ 
+      
+ 
+        <div class="nombre">NOMBRE: TATIANA</div>
+ 
+   
+ 
+    <br>
+ 
+    <div class="correo">CORREO: JKLASLASJL@GMAIL.COM</div>
+ 
+     
+ 
+  
+ 
+    <button>
+ 
+    ELIMINAR
+ 
+    <img src="../../../../assets/img/CANECA.png" height="30px" width="30px" alt="">
+ 
+    </button>
+ 
+    
+ 
+    <button>EDITAR
+ 
+      <img src="../../../../assets/img/trasparente.png" height="30px" width="30px" alt="">
+ 
+    </button>
+ 
+       </div>
+ 
+    <hr>
+ 
+    <div class="usuario">
+ 
+        <img class="imagenperfil" src="../../../../assets/img/perfil-mujer-bonita-gafas-sol-rojas_1304-5212.jpg" height="80px" width="80px" alt="">
+ 
+        <div class="nombre">NOMBRE: TATIANA</div>
+ 
+   
+ 
+        <br>
+ 
+        <div class="correo">CORREO: JKLASLASJL@GMAIL.COM</div>
+ 
+         
+ 
+    <button>
+ 
+     ELIMINAR
+ 
+     <img src="../../../../assets/img/CANECA.png" height="30px" width="30px" alt="">
+ 
+     </button>
+ 
+     
+ 
+     <button>EDITAR
+ 
+       <img src="../../../../assets/img/trasparente.png" height="30px" width="30px" alt="">
+ 
+     </button>
+ 
+     
+ 
+    </div>
+ 
+    
+ 
+    <hr>
+ 
+    <div class="usuario">
+ 
+        <img class="imagenperfil" src="../../../../assets/img/img_msanoja_20160801-194152_imagenes_lv_getty_istock_77607221_small-k0hH--656x437@LaVanguardia-Web.jpg"  height="80px" width="80px" alt="">
+ 
+        <div class="nombre">NOMBRE: TATIANA</div>
+ 
+   
+ 
+    <br>
+ 
+    <div class="correo">CORREO: JKLASLASJL@GMAIL.COM</div>
+ 
+     
+ 
+    <button>
+ 
+     ELIMINAR
+ 
+     <img src="../../../../assets/img/CANECA.png" height="30px" width="30px" alt="">
+ 
+     </button>
+ 
+     
+ 
+     <button>EDITAR
+ 
+       <img src="../../../../assets/img/trasparente.png" height="30px" width="30px" alt="">
+ 
+     </button>
+ 
+    </div>
+ 
+ <hr>
+ 
+   </div>
+ 
+ <div class="vacio">
+ 
+  
+ 
+    <div class="slider">
+ 
+    
+ 
+ <ul>
+ 
+  <li>
+ 
+    
+ 
+    <img src="../../../../assets/img/6419666-salt-wallpapers.jpg" height="580px" width="550px" alt="">
+ 
+  </li>
+ 
+  <li>
+ 
+      <img src="../../../../assets/img/d22e5b27725e7bc8d906c6fafb8c3fd4.jpg" height="580px" width="550px"  alt="">
+ 
+    </li>
+ 
+  
+ 
+    <li>
+ 
+        <img src="../../../../assets/img/image.jpg" height="580px" width="550px"  alt="">
+ 
+      </li>
+ 
+    
+ 
+      <li>
+ 
+        <img src="../../../../assets/img/pulp-fiction-musica-de-la-pelicula-D_NQ_NP_771631-MLC29971368844_042019-F.jpg" height="580px" width="550px"  alt="">
+ 
+      </li>
+ 
+ </ul>
+ 
+    </div>
+ 
+  </div>
+ 
+ </div> 
+ -->
